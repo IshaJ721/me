@@ -11,29 +11,33 @@ tabs.forEach((tab, i) => {
   });
 });
 
-// Floating stickers gentle animation
-const stickers = document.querySelectorAll('.sticker');
+// FLOATING STICKERS - more, gentle drift, lower on page
+const stickerImages = ['heart.jpeg','star.jpeg','cloud.jpeg','tape.jpeg','heart.jpeg','star.jpeg'];
+stickerImages.forEach((src, i) => {
+  const sticker = document.createElement('div');
+  sticker.className = 'sticker';
+  sticker.style.backgroundImage = `url(${src})`;
 
-stickers.forEach(sticker => {
+  // Start position random lower half of page
+  sticker.style.left = `${5 + Math.random() * 85}vw`;
+  sticker.style.top = `${55 + Math.random() * 40}vh`;
+
+  document.body.appendChild(sticker);
+
   let rotation = Math.random() * 360;
   let dirX = Math.random() < 0.5 ? -1 : 1;
-  let dirY = Math.random() < 0.5 ? -1 : 1;
-  let speed = 0.1 + Math.random() * 0.2;
+  let speed = 0.05 + Math.random() * 0.1;
 
   function animate() {
-    let x = parseFloat(sticker.style.left) || 0;
-    let y = parseFloat(sticker.style.top) || 0;
-
+    let x = parseFloat(sticker.style.left);
     x += dirX * speed;
-    y += dirY * speed;
 
-    if (x < 0 || x > 90) dirX *= -1;
-    if (y < 0 || y > 90) dirY *= -1;
+    if (x < 0) dirX = 1;
+    if (x > 90) dirX = -1;
 
     sticker.style.left = `${x}vw`;
-    sticker.style.top = `${y}vh`;
 
-    rotation += 0.1;
+    rotation += 0.05;
     sticker.style.transform = `rotate(${rotation}deg)`;
 
     requestAnimationFrame(animate);

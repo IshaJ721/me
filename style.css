@@ -37,6 +37,12 @@ header {
 .tab-btn.active {
   background: #66a3ff;
   color: #fff;
+  transform: scale(1.1);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.tab-btn:hover {
+  transform: scale(1.05);
 }
 
 .tab-content {
@@ -52,6 +58,24 @@ header {
   display: block;
   opacity: 1;
   transform: translateY(0);
+  animation: bounceIn 0.6s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .card {
@@ -101,35 +125,34 @@ header {
   box-shadow: 4px 4px 12px #336699;
 }
 
-/* Floating stickers */
-.sticker {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  background-size: cover;
-  animation: float 6s infinite ease-in-out;
-  z-index: 1000;
-  pointer-events: none;
+/* Biriyani smaller */
+.card img[alt="Biriyani"] {
+  width: 100px;
+  margin: 0.5rem auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px #6699cc;
 }
 
-.sticker.cloud { background-image: url('cloud.jpeg'); left: 10%; top: 10%; animation-delay: 0s; }
-.sticker.star { background-image: url('star.jpeg'); left: 30%; top: 20%; animation-delay: 2s; }
-.sticker.heart { background-image: url('heart.jpeg'); left: 50%; top: 15%; animation-delay: 1s; }
-.sticker.tape { background-image: url('tape.jpeg'); left: 70%; top: 5%; animation-delay: 3s; }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(10deg); }
+/* Volunteer logos */
+.volunteer-logos img {
+  max-width: 100px;
+  margin: 0.3rem;
 }
 
-/* Quick adjustments */
+/* Tab images general sizing */
 .tab-content img {
   max-width: 100%;
   max-height: 200px;
   object-fit: contain;
 }
 
-.volunteer-logos img {
-  max-width: 100px;
-  margin: 0.3rem;
+/* Floating stickers */
+.sticker {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  z-index: 1000;
+  pointer-events: none;
 }
