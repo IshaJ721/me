@@ -1,145 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Isha's Blue Scrapbook</title>
-<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texas Bluebonnets App 💙</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Animated Stickers -->
-  <img src="cloud.jpeg" class="sticker cloud" alt="cloud sticker">
-  <img src="star.jpeg" class="sticker star" alt="star sticker">
-  <img src="heart.jpeg" class="sticker heart" alt="heart sticker">
+  <!-- Floating Stickers -->
+  <div class="sticker cloud"></div>
+  <div class="sticker star"></div>
+  <div class="sticker heart"></div>
+  <div class="sticker tape"></div>
+
+  <!-- Header -->
+  <header>
+    <h1>Texas Bluebonnets App 💙</h1>
+  </header>
 
   <!-- Tabs -->
   <div class="tabs">
-    <button class="tab-button active" data-tab="applicant-info">Applicant Info</button>
-    <button class="tab-button" data-tab="short-answers">Short Answers</button>
-    <button class="tab-button" data-tab="fun-questions">Fun Questions</button>
-    <button class="tab-button" data-tab="signed-statement">Signed Statement</button>
+    <button class="tab-btn active" data-tab="info">Applicant Info</button>
+    <button class="tab-btn" data-tab="academics">Academic Records</button>
+    <button class="tab-btn" data-tab="short">Short Answers</button>
+    <button class="tab-btn" data-tab="quick">Quick Questions</button>
+    <button class="tab-btn" data-tab="signature">Signed Statement</button>
   </div>
 
-  <!-- Tab Pages -->
-  <div id="applicant-info" class="tab-page active">
-    <h2>Applicant Information</h2>
-    <div class="card-grid">
-      <div class="card">
-        <p><strong>Preferred Full Name:</strong> Isha Jannu</p>
-        <p><strong>Pronouns:</strong> she/her/hers</p>
-        <p><strong>Current UT Address:</strong> 2011 San Antonio Street APT 1817 Austin, TX 78705</p>
-        <p><strong>Phone Number:</strong> 2145856729</p>
-        <p><strong>Email Address:</strong> ishajannu@utexas.edu</p>
-        <p><strong>UT eid:</strong> isj283</p>
-        <p><strong>Cumulative GPA:</strong> 3.23</p>
-        <p><strong>Year:</strong> Sophomore</p>
-        <p><strong>Major:</strong> Computer Science</p>
-      </div>
-      <div class="card">
-        <img src="me.jpeg" class="polaroid-img" alt="me">
-      </div>
-    </div>
-  </div>
-
-  <div id="short-answers" class="tab-page">
-    <h2>Short Answer Questions</h2>
-    
-    <div class="card-grid">
-      <div class="card">
-        <p><strong>Why do you want to join Texas Bluebonnets?</strong></p>
-        <p>As a sophomore, I want to meet people outside my major that value the same things as me, and I think the pillars in CLASS fulfill that perfectly. This was the one place, at your info sessions, that I felt was genuine, because I'm an introvert and you all truly made me feel comfy being myself. Beyond my roomies, I would love to find a group of cuties who I can call family to do cutie activities with! &lt;3</p>
-      </div>
-      <div class="card">
-        <p><strong>Pick one core pillar and how you embody it:</strong></p>
-        <p>I'm really passionate about youth literacy after volunteer tutoring for years and I’m grateful to have grown up with an emphasis on the value of education. Realizing that illiteracy is a widespread epidemic made me want to advocate for it, by speaking at a TEDxYouth event and how technology can help us solve it together. Similarly, I also have spent many hours at the North Texas Food bank with my family and have continued that path of aiding food insecurity here at UT, through an org called ATX Food Hub. As the map improvement lead, we were able to provide a centralized hub to consolidate discounted/free food resources for students and Austinites– that’s why I’m especially excited if I continued that journey with Bluebonnets with Sunday Lunchbox. Additionally, I’m currently part of Project Advance Austin's working with the Dress for Success nonprofit for helping women achieve their professional dreams. I'm majoring in computer science simply because I want to develop tech to improve the everyday lives of people and that's honestly my life goal.</p>
-        <div class="card-logos">
-          <img src="logo1.png" alt="volunteer logo 1">
-          <img src="logo2.png" alt="volunteer logo 2">
-        </div>
-      </div>
-
-      <div class="card">
-        <p><strong>What are you most passionate about right now?</strong></p>
-        <p>I’m passionate about living life to the fullest before I’m stuck in a corporate job (the 9-5 is overrated 🤨). Along those lines, I’m trying to find my personal brand and make time to find joy in the small things even with a busy schedule. For instance, I designed my room in my apartment (my first one 🥹) with a sage green theme, leaf fairy lights, and wooden/gold accents. I personally painted my decor on canvas and reconnecting with my creative side made me really happy– we get too caught up in life sometimes to make time for relaxing hobbies.</p>
-      </div>
-
-      <div class="card evana-photobooth">
-        <p><strong>Evana Photobooth:</strong></p>
-        <img src="evania1.JPG" alt="evania1">
-        <img src="evania2.JPG" alt="evania2">
-        <img src="evania3.JPG" alt="evania3">
-      </div>
-
-      <div class="card">
-        <p><strong>Book you would write:</strong></p>
-        <p>My lifelong dream has been to write a book– I’m a HUGE fiction reader, especially fantasy, dystopia, sci-fi, and romance. Later in life, I would love to move to some remote town in Europe (Italy is a strong contender?? 😁) and write my novel in some small cottage and maybe do my tech job remotely. I would write an awesome sci-fi romance, the next Hunger Games or Fourth Wing– I’m always open to good book recs– and I live for a good plot. I’d probably write a romance set in space with some astronauts– I especially love Ali Hazelwood’s style of bridging romance and women in STEM for nerds like me 😋so I would probably implement something similar.</p>
-      </div>
-
-      <div class="card photo-grid">
-        <p><strong>Matcha Collection:</strong></p>
-        <img src="matcha.JPG" alt="matcha1">
-        <img src="matcha2.JPG" alt="matcha2">
-        <img src="matcha3.JPG" alt="matcha3">
-        <img src="matcha4.JPG" alt="matcha4">
-        <img src="matcha5.JPG" alt="matcha5">
-        <img src="matchabest.JPG" alt="matcha best">
-      </div>
-
-      <div class="card">
-        <p><strong>Favorite meal:</strong></p>
-        <img src="biriyani.JPG" class="polaroid-img" alt="biriyani">
-      </div>
-
-      <div class="card photo-grid">
-        <p><strong>Holi & Indian Festival:</strong></p>
-        <img src="holi.JPG" alt="holi">
-        <img src="indian.jpeg" alt="indian">
-      </div>
-    </div>
-  </div>
-
-  <div id="fun-questions" class="tab-page">
-    <h2>Fun Questions</h2>
-    <div class="card-grid">
-      <div class="card">
-        <p><strong>What is your favorite thing about yourself?</strong></p>
-        <p>Spontaneity– because it enables me to make time for the people I care about, and makes the small things feel super special. For example, when my high school friend visited UT for the first time last semester, I turned Top Golf and Taco Bell into her first nightly college adventure, and I’m incredibly grateful that she will always take that memory with her.</p>
-      </div>
-      <div class="card">
-        <p><strong>If you could travel anywhere right now?</strong></p>
-        <p>I would go to a remote beach. There’s something so calming about the ocean– it reminds me of my childhood in Jersey. Plus, I will never say no to a swim #ilovebartonsprings</p>
-      </div>
-      <div class="card">
-        <p><strong>Best advice received:</strong></p>
-        <p>YOLO because I've always aspired to live my life that way. Whenever I’m debating spending money or time on some experience, my roommate always tells me you only live once. Because money comes back but experiences don’t– I find that mindset so endearing especially when it’s so unreasonable 😅. I define my life by being spontaneous (shoutout to my roomies who introduced me to the idea of study dates/cafe hopping on a random Tuesday). And I think regardless of the additional work or time commitment or cost, nothing replicates the memories and happiness you’ll get from quality time.</p>
-      </div>
-      <div class="card">
-        <p><strong>Music when in a great mood:</strong></p>
-        <p>Throwback :)) I love old Taylor Swift, Ed Sheeran, etc– basically songs to scream in the shower. I’ve been really into indie artists recently and I also love Bollywood music &lt;3.</p>
-      </div>
-      <div class="card">
-        <p><strong>If you had $1000, what would you spend it on?</strong></p>
-        <p>Food, obviously heheh– but more realistically, people. My love language is gift giving and one of my favorite gifts ever was my first pair of crocs (pink!) for my 18th birthday because my friend knew I’ve never worn them before– thoughtfulness is what drives all my friendships. Just yesterday we bought my roommate a gift basket because she was overwhelmed with org work :( Overall, I love putting a smile on my friends’ faces.</p>
-      </div>
-      <div class="card">
-        <p><strong>If all animals were same size, who would win?</strong></p>
-        <p>A mouse because did Tom ever really catch up to Jerry?? Plus they're too cute to eat. Everyone would take pity on them.</p>
-      </div>
-      <div class="card">
-        <p><strong>Death row meal:</strong></p>
-        <p>Hard to choose– pasta because who doesn’t love a good creamy fettuccine? Of course, my mom’s chicken biriyani because I LOVE spice, and chocolate cake because I NEVER forget dessert 😋</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="signed-statement" class="tab-page">
-    <h2>Signed Statement</h2>
+  <!-- Tab Content -->
+  <div class="tab-content active" id="info">
     <div class="card">
-      <p>By signing and submitting this statement, you agree that the information provided to Texas Bluebonnets on your entire application is accurate and true to the best of your knowledge.</p>
+      <img src="me.jpeg" class="polaroid" alt="Me">
+      <p><strong>Preferred Full Name:</strong> Isha Jannu</p>
+      <p><strong>Pronouns:</strong> she/her/hers</p>
+      <p><strong>Current UT Address:</strong> 2011 San Antonio Street APT 1817 Austin, TX 78705</p>
+      <p><strong>Phone Number:</strong> 2145856729</p>
+      <p><strong>Email Address:</strong> ishajannu@utexas.edu</p>
+      <p><strong>UT eid:</strong> isj283</p>
     </div>
   </div>
 
+  <div class="tab-content" id="academics">
+    <div class="card">
+      <p><strong>Cumulative GPA:</strong> 3.23</p>
+      <p><strong>Year:</strong> Sophomore</p>
+      <p><strong>Major:</strong> Computer Science</p>
+    </div>
+  </div>
+
+  <div class="tab-content" id="short">
+    <!-- Why join -->
+    <div class="card">
+      <h2>Why do you want to join Texas Bluebonnets?</h2>
+      <p>As a sophomore, I want to meet people outside my major that value the same things as me, and I think the pillars in CLASS fulfill that perfectly. This was the one place, at your info sessions, that I felt was genuine, because I'm an introvert and you all truly made me feel comfy being myself. Beyond my roomies, I would love to find a group of cuties who I can call family to do cutie activities with! <3</p>
+    </div>
+
+    <!-- Pillar -->
+    <div class="card">
+      <h2>Core Pillar</h2>
+      <p>I'm really passionate about youth literacy after volunteer tutoring for years and I’m grateful to have grown up with an emphasis on the value of education. Realizing that illiteracy is a widespread epidemic made me want to advocate for it, by speaking at a TEDxYouth event and how technology can help us solve it together. Similarly, I also have spent many hours at the North Texas Food bank with my family and have continued that path of aiding food insecurity here at UT, through an org called ATX Food Hub. As the map improvement lead, we were able to provide a centralized hub to consolidate discounted/free food resources for students and Austinites– that’s why I’m especially excited if I continued that journey with Bluebonnets with Sunday Lunchbox. Additionally, I’m currently part of Project Advance Austin's working with the Dress for Success nonprofit for helping women achieve their professional dreams. I'm majoring in computer science simply because I want to develop tech to improve the everyday lives of people and that's honestly my life goal.</p>
+      <div class="volunteer-logos">
+        <img src="logo1.png" alt="Org Logo">
+        <img src="logo2.png" alt="Org Logo">
+      </div>
+    </div>
+
+    <!-- Photobooth Evana -->
+    <div class="card photobooth">
+      <h2>Evana Memories</h2>
+      <img src="evania1.JPG" alt="Evana 1">
+      <img src="evania2.JPG" alt="Evana 2">
+      <img src="evania3.JPG" alt="Evana 3">
+    </div>
+
+    <!-- Photobooth Matcha -->
+    <div class="card photobooth">
+      <h2>Matcha Collection</h2>
+      <img src="matcha.JPG" alt="Matcha 1">
+      <img src="matcha2.JPG" alt="Matcha 2">
+      <img src="matcha3.JPG" alt="Matcha 3">
+      <img src="matcha4.JPG" alt="Matcha 4">
+      <img src="matcha5.JPG" alt="Matcha 5">
+      <img src="matchabest.JPG" alt="Best Matcha">
+    </div>
+
+    <!-- Food -->
+    <div class="card">
+      <h2>Death Row Meal</h2>
+      <img src="biriyani.JPG" alt="Biriyani">
+      <p>Hard to choose– pasta because who doesn’t love a good creamy fettuccine? Of course, my mom’s chicken biriyani because I LOVE spice, and chocolate cake because I NEVER forget dessert 😋</p>
+    </div>
+
+    <!-- Cultural -->
+    <div class="card photobooth">
+      <h2>Culture & Fun</h2>
+      <img src="holi.JPG" alt="Holi">
+      <img src="indian.jpeg" alt="Indian">
+    </div>
+  </div>
+
+  <div class="tab-content" id="quick">
+    <div class="card">
+      <h2>Quick Questions</h2>
+      <p><strong>Favorite thing about yourself:</strong> Spontaneity– because it enables me to make time for the people I care about, and makes the small things feel super special...</p>
+      <p><strong>Travel:</strong> I would go to a remote beach...</p>
+      <p><strong>Best advice:</strong> YOLO because I've always aspired...</p>
+      <p><strong>Music:</strong> Throwback :)) I love old Taylor Swift...</p>
+      <p><strong>1000 dollars:</strong> Food, obviously heheh– but more realistically, people...</p>
+      <p><strong>Animals fight:</strong> A mouse because did Tom ever really catch up to Jerry??</p>
+      <p><strong>Victorian Era:</strong> Hear me out– a vibrator in the Victorian Era...</p>
+      <p><strong>Most likely to:</strong> accidentally throw my phone in the trash can or dryer...</p>
+      <p><strong>Favorite emoji:</strong> 😚😋</p>
+    </div>
+  </div>
+
+  <div class="tab-content" id="signature">
+    <div class="card">
+      <h2>Signed Statement</h2>
+      <p>Thank you for giving me the chance to express myself &lt;3 I’ve never used my technical skills in a way that’s solely for this purpose so you have my gratitude.</p>
+      <p>By signing and submitting this statement, you agree that the information provided to Texas Bluebonnets on your entire application is accurate and true to the best of your knowledge.</p>
+      <p class="signature">Isha Jannu</p>
+    </div>
+  </div>
 </body>
 </html>
