@@ -1,84 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
-:root{
-  --blue:#66aee6;
-  --nav-w:160px;
+body {
+  margin: 0;
+  font-family: 'Shadows Into Light', cursive, sans-serif;
+  background: #cce0ff url('paper-texture.png');
+  background-size: cover;
+  color: #003366;
+  overflow-x: hidden;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;font-family:'Shadows Into Light',cursive,system-ui; background:#fdfdf7 url('paper-texture.png'); background-size:cover; color:#0b1a2b;
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: #b3d1ff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-.scene{display:flex;align-items:flex-start;gap:18px;padding:28px;min-height:100vh}
-/* tabs */
-.tabs{width:var(--nav-w);display:flex;flex-direction:column;gap:10px;padding-top:80px;position:relative}
-.tab{
-  background:linear-gradient(180deg,#e6f6ff,#d0ebff);
-  border-radius:6px 6px 0 0;
-  padding:14px 10px;
-  text-align:left;
-  font-weight:700;
-  color:#043b5b;
-  border:3px solid rgba(19,88,129,0.08);
-  cursor:pointer;
-  transform-origin:left center;
-  box-shadow:4px 8px 18px rgba(10,20,40,0.08);
-  transition:transform .35s cubic-bezier(.2,.9,.3,1),box-shadow .2s;
-  position:relative;
-  left:-20px;
+
+.tab-button {
+  background: #e6f0ff;
+  border: 2px solid #99c2ff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transform: rotate(-1deg);
 }
-.tab.active{background:linear-gradient(180deg,#bfe8ff,#9fd8ff);transform:translateX(12px) scale(1.02);box-shadow:6px 12px 26px rgba(10,20,40,0.14)}
-.tab:focus{outline:none;box-shadow:0 0 0 3px rgba(102,174,231,0.18)}
-/* notebook main */
-.notebook{flex:1;max-width:980px}
-.notebook-header{display:flex;gap:18px;align-items:center;padding:18px;background:linear-gradient(180deg,#ffffff,#fbffff);border-radius:12px;box-shadow:6px 10px 30px rgba(10,20,40,0.06);border:3px dashed rgba(102,174,231,0.12)}
-.me-photo{width:140px;flex-shrink:0;position:relative}
-.me-photo img{width:140px;height:140px;object-fit:cover;border-radius:10px;border:6px solid #fffefc;box-shadow:4px 8px 20px rgba(0,0,0,0.12)}
-.photo-caption{font-size:.8rem;color:#14527a;margin-top:6px}
-.title h1{margin:0;color:#034b76;font-size:1.4rem}
-.title .sub{margin:4px 0 0;color:#0b4f77}
 
-/* pages area */
-.pages{position:relative;perspective:1200px;margin-top:18px;min-height:540px}
-.page{position:absolute;inset:0;background:linear-gradient(180deg,#fffefc,#f8ffff);padding:26px;border-radius:12px;box-shadow:8px 14px 40px rgba(10,20,40,0.09);transform-origin:left center;transform-style:preserve-3d;backface-visibility:hidden;transition:transform .7s cubic-bezier(.2,.9,.25,1),opacity .45s}
-.page:not(.active){opacity:0;pointer-events:none;transform:rotateY(-90deg) translateX(-20px) scale(.98)}
-.page.active{opacity:1;pointer-events:auto;transform:rotateY(0deg) translateX(0) scale(1)}
-
-/* verbatim */
-.verbatim{white-space:pre-wrap;background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(240,248,255,0.4));padding:12px;border-radius:8px;border-left:6px solid rgba(102,174,231,0.25);font-size:0.95rem;line-height:1.35}
-
-/* polaroids and placeholders */
-.polaroid{width:160px;background:#fffefc;padding:10px;border-radius:8px;box-shadow:4px 8px 18px rgba(10,20,40,0.12);text-align:center}
-.polaroid img{width:100%;height:100px;object-fit:cover;border-radius:6px}
-.photo-row{display:flex;gap:12px;margin-top:12px}
-.photo-row .polaroid figcaption{font-size:.8rem;color:#14527a;margin-top:6px}
-
-/* support blocks */
-.support{margin-top:12px;display:flex;gap:12px;align-items:flex-start}
-.small-note{background:#dff3ff;padding:8px;border-radius:8px;border:2px dashed rgba(68,150,210,0.4)}
-.signature-area{display:flex;align-items:center;gap:12px;margin-top:14px}
-.signature-area .handwritten{font-size:1.1rem;color:#034b76;background:#fffefc;padding:8px 12px;border-radius:8px;box-shadow:2px 4px 10px rgba(0,0,0,0.08)}
-
-/* floating stickers */
-.floating{position:fixed;width:80px;z-index:40;pointer-events:none;opacity:0.95}
-.floating.heart{left:28px;bottom:80px;animation:floatHeart 5s ease-in-out infinite}
-.floating.star{right:40px;top:120px;animation:spinStar 4s linear infinite}
-.floating.cloud{left:120px;top:40px;animation:driftCloud 14s ease-in-out infinite}
-.floating.tape-sticker{right:26px;bottom:160px;animation:tiltTape 6s ease-in-out infinite}
-
-@keyframes floatHeart{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-18px) rotate(6deg)}}
-@keyframes spinStar{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
-@keyframes driftCloud{0%{transform:translateX(0)}50%{transform:translateX(40px)}100%{transform:translateX(0)}}
-@keyframes tiltTape{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(6deg)}}
-
-/* sparkle */
-.sparkle{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--blue);opacity:.9;pointer-events:none;z-index:30;animation:twinkle 2.6s linear infinite}
-@keyframes twinkle{0%{transform:scale(.6);opacity:.9}50%{transform:scale(1.4);opacity:1}100%{transform:scale(.2);opacity:0.1}}
-
-/* responsive */
-@media (max-width:900px){
-  .scene{flex-direction:column;padding:14px}
-  .tabs{order:2;display:flex;flex-direction:row;overflow:auto;width:100%;gap:8px;padding:10px}
-  .tab{left:0;border-radius:8px}
-  .notebook-header{flex-direction:column;align-items:center}
-  .me-photo img{width:120px;height:120px}
-  .pages{min-height:640px}
+.tab-button.active {
+  background: #99c2ff;
+  color: #fff;
 }
+
+.tab-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tab-page {
+  display: none;
+  transform: rotate(1deg);
+}
+
+.tab-page.active {
+  display: block;
+}
+
+.card, .card-grid .card {
+  background: #e6f7ff;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 2px solid #99c2ff;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.15);
+  transform: rotate(-2deg);
+  position: relative;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.sticker {
+  position: absolute;
+  width: 60px;
+  opacity: 0.8;
+  z-index: 5;
+}
+
+.cloud { top: 50px; left: 20px; animation: float 8s ease-in-out infinite; }
+.star { top: 200px; right: 30px; animation: wiggle 3s ease-in-out infinite; }
+.heart { bottom: 100px; left: 40px; animation: bounce 4s ease-in-out infinite; }
+
+@keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);} }
+@keyframes wiggle { 0%,100%{transform:rotate(0deg);}50%{transform:rotate(15deg);} }
+@keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
+
+a { color: #003366; font-weight: bold; text-decoration: none; }
