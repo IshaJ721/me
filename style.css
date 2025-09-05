@@ -1,164 +1,96 @@
-:root {
-  --blue-light:#e6f2ff;
-  --blue-med:#b3d9ff;
-  --blue-dark:#5d9cec;
-  --ink:#034f84;
-  --note:#fffdf5;
-  --accent:#ffe6f2;
-}
+/* -------------------------
+   Blue Scrapbook — style.css
+   ------------------------- */
 
-*{box-sizing:border-box;}
-body {
-  margin:0;
-  background:linear-gradient(180deg,var(--blue-light),#f7fbff);
-  font-family:'Patrick Hand',cursive;
-  color:var(--ink);
-  overflow-x:hidden;
-  position:relative;
-}
-
-header {
-  text-align:center;
-  padding:2rem 1rem 1.2rem;
-  background:var(--blue-med);
-  border-bottom:8px dotted var(--blue-dark);
-  position:relative;
-}
-header::after {
-  content:"✿ ✧ ✿";
-  font-family:'Gloria Hallelujah',cursive;
-  font-size:1.2rem;
-  position:absolute;
-  bottom:-0.9rem;
-  left:50%;
-  transform:translateX(-50%);
-  color:var(--blue-dark);
-  background:var(--blue-light);
-  padding:0 .8rem;
-  border-radius:12px;
-}
-
-.title {
-  font-family:'Shadows Into Light',cursive;
-  font-size:2.8rem;
-  margin:0;
-  color:white;
-  text-shadow:2px 2px var(--blue-dark);
-}
-
-/* Tabs */
-nav.tabs {
-  margin-top:1rem;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:0.7rem;
-}
-.tab-btn {
-  border:none;
-  background:var(--note);
-  padding:0.6rem 1.2rem;
-  border-radius:18px;
-  font-family:'Gloria Hallelujah',cursive;
-  font-size:1rem;
-  cursor:pointer;
-  box-shadow:3px 3px 0 var(--blue-dark);
-  transition:all .2s;
-}
-.tab-btn:hover { transform:rotate(-3deg) scale(1.05);}
-.tab-btn.active {
-  background:var(--blue-dark);
-  color:white;
-  transform:rotate(2deg) scale(1.1);
-}
-
-main { padding:2rem 1rem; max-width:1000px; margin:auto;}
-
-.tab-content { display:none;}
-.tab-content.active { display:block; animation:flipIn .7s ease both;}
-
-@keyframes flipIn {
-  0%{transform:rotateY(-90deg) scale(.8); opacity:0;}
-  60%{transform:rotateY(10deg) scale(1.05);}
-  100%{transform:rotateY(0) scale(1); opacity:1;}
-}
-
-/* Scrapbook note */
-.note {
-  background:var(--note);
-  border:3px dashed var(--blue-med);
-  border-radius:12px;
-  padding:1.2rem 1.5rem;
-  margin:1.5rem auto;
-  position:relative;
-  box-shadow:6px 6px 0 var(--blue-med);
-}
-.note::before {
-  content:"";
-  position:absolute;
-  top:-15px; left:20px;
-  width:60px; height:30px;
-  background:rgba(255,255,255,0.8);
-  border:2px solid var(--blue-dark);
-  transform:rotate(-5deg);
-  box-shadow:2px 2px var(--blue-dark);
-}
-
-.note h2 {
-  font-family:'Gloria Hallelujah',cursive;
-  margin-top:0;
-  font-size:1.6rem;
-  color:var(--blue-dark);
-}
-
-/* Polaroid look */
-.polaroid {
-  background:white;
-  padding:0.6rem;
-  margin:1.5rem auto;
-  max-width:700px;
-  border:8px solid #fff;
-  border-bottom:50px solid #fff;
-  box-shadow:8px 8px 0 var(--blue-dark);
-  transform:rotate(-2deg);
-}
-.polaroid iframe,
-.polaroid img {
-  width:100%; border:none; border-radius:6px;
-}
-.caption { text-align:center; margin-top:0.5rem; font-style:italic;}
-
-.grid {
-  display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;
-}
-.photo-card {
-  background:white;
-  padding:0.6rem;
-  border-radius:10px;
-  box-shadow:4px 4px 0 var(--blue-med);
-  max-width:280px;
-  transform:rotate(-3deg);
-}
-.photo-card img {width:100%; border-radius:6px;}
-
-/* Stickers & Tape */
-.sticker {
-  position:absolute;
-  font-size:2rem;
-  opacity:0.7;
-  transform:rotate(-15deg);
-  pointer-events:none;
-}
-.star { top:60px; left:20px; color:var(--blue-dark);}
-.heart { bottom:40px; right:25px; color:#ff6699;}
-
-.tape {
-  position:absolute;
-  width:120px;
-  height:25px;
-  background:var(--blue-med);
-  opacity:0.6;
-  transform:rotate(-8deg);
-}
-.tape1 { top:200px; right:40px;}
-.tape2 { bottom:180px; left:50px;}
+   :root{
+    --bg:#eaf6ff;
+    --sky:#dff2ff;
+    --accent:#bfe3ff;
+    --ink:#083a6b;
+    --soft:#fffdf8;
+    --washi:#a7d3ff;
+  }
+  
+  /* reset-ish */
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: 'Patrick Hand', cursive;
+    background: var(--bg) url('assets/paper-texture.png') repeat;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  
+  /* floating doodles (positioned in HTML) */
+  .doodle{ position:fixed; z-index:0; opacity:0.85; pointer-events:none; }
+  .doodle-cloud{ top:18px; left:20px; width:140px; animation:float 10s ease-in-out infinite; }
+  .doodle-star { right:28px; bottom:120px; width:100px; animation:float 6s ease-in-out infinite; }
+  .doodle-heart { top:140px; right:40px; width:80px; animation:float 8s ease-in-out infinite; }
+  .tape { opacity:0.95; width:140px; z-index:2; }
+  .tape-top-left{ top:30px; left:18px; transform:rotate(-12deg); }
+  .tape-top-right{ top:30px; right:18px; transform:rotate(8deg); }
+  
+  /* header */
+  .site-header{ text-align:center; padding:28px 12px 10px; position:relative; z-index:3; }
+  .header-inner{ display:inline-block; background:linear-gradient(90deg,var(--accent),#d9f0ff); padding:12px 22px; border-radius:18px; box-shadow: 0 8px 18px rgba(3,63,114,0.09); border: 2px dashed rgba(3,63,114,0.08); }
+  .logo-title{ margin:8px 0 0; font-family:'Pacifico', cursive; font-size:38px; color:var(--ink); text-shadow:2px 2px rgba(91,146,205,0.2); }
+  .subtitle{ margin:6px 0 0; color:rgba(3,63,114,0.8); font-size:14px; }
+  
+  /* tabs */
+  .tabs{ display:flex; justify-content:center; gap:10px; margin-top:12px; z-index:4; }
+  .tab-btn{ background:var(--soft); border-radius:18px; padding:8px 14px; border:0; font-family:'Shadows Into Light', cursive; font-size:16px; cursor:pointer; box-shadow: 0 6px 0 rgba(18,86,143,0.08); transition: transform .18s ease, box-shadow .18s; }
+  .tab-btn:hover{ transform: translateY(-4px) rotate(-2deg); }
+  .tab-btn.active{ background:var(--ink); color:white; transform: translateY(-6px) rotate(2deg); box-shadow: 0 10px 18px rgba(3,79,132,0.18); }
+  
+  /* main container */
+  .container{ max-width:1080px; margin:28px auto; padding:0 18px 60px; position:relative; z-index:5; }
+  
+  /* cards / notes / polaroids */
+  .card{ background:var(--soft); border-radius:16px; padding:18px; margin:18px 0; box-shadow: 8px 12px 0 rgba(91,146,205,0.06); border: 3px dashed var(--washi); transform-origin:center; transition: transform .25s ease; }
+  .card:hover{ transform: translateY(-6px) rotate(-1deg) scale(1.01); }
+  
+  .note h2{ margin:0 0 8px; font-family:'Pacifico',cursive; color:var(--ink); font-size:22px; }
+  
+  .answer{ margin:8px 0; line-height:1.45; }
+  
+  /* polaroid large (video) */
+  .polaroid-large{ max-width:760px; margin:18px auto; padding:12px; border-radius:12px; border:10px solid #fff; border-bottom:56px solid #fff; box-shadow: 12px 16px 0 rgba(91,146,205,0.12); transform:rotate(-2deg); }
+  .polaroid-large iframe{ width:100%; height:420px; border-radius:8px; display:block; }
+  
+  /* gallery */
+  .gallery{ display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:12px; align-items:start; }
+  .photo-card{ background:#ffffff; border-radius:12px; padding:8px; box-shadow:6px 8px 0 rgba(91,146,205,0.08); overflow:hidden; transform-origin:center; }
+  .photo-card img{ width:100%; height:220px; object-fit:cover; border-radius:8px; display:block; transition: transform .32s ease; }
+  .photo-card figcaption{ text-align:center; font-size:14px; margin-top:8px; color:var(--ink); font-style:italic; }
+  
+  /* tilts & micro-animations classes (applied by JS too) */
+  .tilt-left{ transform: rotate(-4deg); }
+  .tilt-right{ transform: rotate(5deg); }
+  .tilt-small{ transform: rotate(-2deg); }
+  .wiggle{ animation:wiggle 2.5s infinite ease-in-out; transform-origin:center; }
+  .floaty{ animation:float 6s ease-in-out infinite; }
+  
+  /* rapid-fire */
+  .note p{ margin:6px 0; }
+  
+  /* footer */
+  .site-footer{ text-align:center; padding:28px 0; color:rgba(3,63,114,0.7); font-family:'Pacifico',cursive; }
+  
+  /* animations */
+  @keyframes float { 0%{ transform:translateY(0) } 50%{ transform:translateY(-16px) } 100%{ transform:translateY(0) } }
+  @keyframes wiggle { 0%,100%{ transform:rotate(-2deg) } 50%{ transform:rotate(3deg) } }
+  @keyframes popIn { 0%{ opacity:0; transform:scale(.92) } 100%{ opacity:1; transform:scale(1) } }
+  
+  /* responsive tweaks */
+  @media (max-width:900px){
+    .polaroid-large iframe{ height:260px; }
+    .photo-card img{ height:160px; }
+  }
+  @media (max-width:480px){
+    .logo-title{ font-size:28px; }
+    .tab-btn{ padding:8px 10px; font-size:14px; }
+  }
+  
+  

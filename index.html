@@ -3,117 +3,148 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Isha's Scrapbook 💙</title>
+  <title>Isha Jannu — Blue Scrapbook 💙</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Shadows+Into+Light&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Patrick+Hand&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1 class="title">💙 Isha's Blue Scrapbook 💙</h1>
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="info">Info</button>
-    <button class="tab-btn" data-tab="academics">Academics</button>
-    <button class="tab-btn" data-tab="service">Service</button>
-    <button class="tab-btn" data-tab="fun">Fun</button>
-  </nav>
-</header>
+  <!-- decorative doodles (PNG images placed in assets/) -->
+  <img src="cloud.jpeg" class="doodle doodle-cloud" alt="">
+  <img src="star.jpeg"  class="doodle doodle-star" alt="">
+  <img src="heart.jpeg"  class="doodle doodle-heart" alt="">
+  <img src="tape.jpeg" class="doodle tape tape-top-left" alt="">
 
-<main>
-  <!-- Info -->
-  <section id="info" class="tab-content active">
-    <div class="note">
-      <h2>Applicant Info ✧</h2>
-      <p><strong>Name:</strong> Isha Jannu</p>
-      <p><strong>Pronouns:</strong> she/her/hers</p>
-      <p><strong>Phone:</strong> 2145856729</p>
-      <p><strong>Email:</strong> ishajannu@utexas.edu</p>
-      <p><strong>UT eid:</strong> isj283</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo-title">💙 Isha's Blue Scrapbook 💙</h1>
+      <p class="subtitle">Texas Bluebonnets Application — show & tell ✨</p>
     </div>
-  </section>
 
-  <!-- Academics -->
-  <section id="academics" class="tab-content">
-    <div class="note">
-      <h2>Academics 🎓</h2>
-      <p><strong>Year:</strong> Sophomore</p>
-      <p><strong>Major:</strong> Computer Science</p>
-      <p><strong>GPA:</strong> 3.23</p>
-    </div>
-  </section>
+    <nav class="tabs" role="tablist" aria-label="Application sections">
+      <button class="tab-btn active" data-tab="info" role="tab" aria-selected="true">Info</button>
+      <button class="tab-btn" data-tab="academics" role="tab">Academics</button>
+      <button class="tab-btn" data-tab="short" role="tab">Short Answers</button>
+      <button class="tab-btn" data-tab="service" role="tab">Service</button>
+      <button class="tab-btn" data-tab="rapid" role="tab">Rapid Fire</button>
+    </nav>
+  </header>
 
-  <!-- Service -->
-  <section id="service" class="tab-content">
-    <div class="note">
-      <h2>Service ✿</h2>
-      <p>
+  <main class="container">
+    <!-- INFO -->
+    <section id="info" class="tab-panel active" role="tabpanel">
+      <article class="note card tilt-left">
+        <h2>Applicant Information ✧</h2>
+        <p><strong>Preferred Full Name:</strong> Isha Jannu</p>
+        <p><strong>Pronouns:</strong> she/her/hers</p>
+        <p><strong>Current UT Address:</strong> 2011 San Antonio Street APT 1817 Austin, TX 78705</p>
+        <p><strong>Phone Number:</strong> 2145856729</p>
+        <p><strong>Email Address:</strong> ishajannu@utexas.edu</p>
+        <p><strong>UT eid:</strong> isj283</p>
+      </article>
+    </section>
+
+    <!-- ACADEMICS -->
+    <section id="academics" class="tab-panel" role="tabpanel" aria-hidden="true">
+      <article class="note card tilt-right">
+        <h2>Academic Records 🎓</h2>
+        <p><strong>Cumulative GPA:</strong> 3.23</p>
+        <p><strong>Year:</strong> Sophomore</p>
+        <p><strong>Major:</strong> Computer Science</p>
+      </article>
+    </section>
+
+    <!-- SHORT ANSWERS -->
+    <section id="short" class="tab-panel" role="tabpanel" aria-hidden="true">
+      <article class="note card">
+        <h2>Short Answers ✍️ (≤250 words)</h2>
+
+        <h3>Why do you want to join Texas Bluebonnets?</h3>
+        <p class="answer">
+          As a sophomore, I want to meet people outside my major that value the same things as me, and I think CLASS fulfills that perfectly. This was the one place, at your info sessions, that I felt was genuine because I'm an introvert and you all truly made me feel comfy being myself.
+        </p>
+
+        <h3>Pick one core pillar — Service (how I embody it)</h3>
+        <p class="answer">
+          I'm really passionate about youth literacy after volunteer tutoring for years and I’m grateful to have grown up emphasizing the value of education. Realizing that illiteracy is an epidemic made me want to advocate for it, through a TEDxYouth event. I also have spent many hours at the North Texas Food bank with my family and have continued that path of aiding food insecurity here at UT, through an org called ATX Food Hub. As the map improvement lead, we were able to provide a centralized hub to consolidate discounted/free food resources for students and Austinites– that’s why I’m especially excited if I continued that journey with Additionally, I’m currently redesigning Project Advance Austin that’s working with the Dress for Success
+        </p>
+
+        <h3>Pick 2 short prompts (≤200 words each)</h3>
+        <strong>What do you value most in a friendship?</strong>
+        <p class="answer">Being genuine — because I'm an introvert and it's so hard to open up to people who I don't feel are being genuine :(</p>
+
+        <strong>What are you most passionate about in your life right now?</strong>
+        <p class="answer">Living life to the fullest before I’m stuck in a corporate job.</p>
+
+      </article>
+    </section>
+
+    <!-- SERVICE -->
+    <section id="service" class="tab-panel" role="tabpanel" aria-hidden="true">
+      <article class="note card">
+        <h2>Service ✿</h2>
+        <p class="answer">
 service— I'm really passionate about youth literacy after volunteer tutoring for years and I’m grateful to have grown up emphasizing the value of education. Realizing that illiteracy is an epidemic made me want to advocate for it, through a TEDxYouth event. Similarly,  I also have spent many hours at the North Texas Food bank with my family and have continued that path of aiding food insecurity here at UT, through an org called ATX Food Hub. As the map improvement lead, we were able to provide a centralized hub to consolidate discounted/free food resources for students and Austinites– that’s why I’m especially excited if I continued that journey with Bluebonnets with Sunday Lunchbox. Additionally, I’m currently part of Project Advance Austin's working with the Dress for Success nonprofit for helping women achieve their professional dreams. I'm majoring in computer science simply because I want to develop tech to improve the everyday lives of people (sorry if I sound corny but its true) and thats kinda my life goal.
-      </p>
-    </div>
+        </p>
+      </article>
 
-    <div class="polaroid">
-      <iframe src="https://www.youtube.com/embed/IU9ZuaH1vms?start=2" allowfullscreen></iframe>
-      <div class="caption">🎤 My TEDxYouth Talk</div>
-    </div>
-
-    <div class="grid">
-      <div class="photo-card">
-        <img src="volunteer1.jpg" alt="Tutoring youth literacy">
-        <div class="caption">Tutoring youth literacy 📚</div>
+      <!-- TEDx talk framed as polaroid -->
+      <div class="polaroid card polaroid-large swing">
+        <iframe src="https://www.youtube.com/embed/IU9ZuaH1vms?start=2" title="Isha's TEDxYouth Talk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="caption">My TEDxYouth Talk 🎤</div>
       </div>
-      <div class="photo-card">
-        <img src="volunteer2.jpg" alt="North Texas Food Bank">
-        <div class="caption">North Texas Food Bank 🥫</div>
+
+      <!-- Volunteering photos -->
+      <div class="gallery">
+        <figure class="photo-card tilt-left wiggle">
+          <img src="assets/volunteer1.jpg" alt="Tutoring youth literacy photo">
+          <figcaption>Tutoring youth literacy 📚</figcaption>
+        </figure>
+
+        <figure class="photo-card tilt-right wiggle">
+          <img src="assets/volunteer2.jpg" alt="North Texas Food Bank photo">
+          <figcaption>North Texas Food Bank 🥫</figcaption>
+        </figure>
+
+        <!-- logos treated as big photos (not tiny logos) -->
+        <figure class="photo-card tilt-small floaty">
+          <img src="assets/logo1.png" alt="ATX Food Hub — flyer / logo">
+          <figcaption>ATX Food Hub 🍴</figcaption>
+        </figure>
+
+        <figure class="photo-card tilt-small floaty">
+          <img src="assets/logo2.png" alt="Dress for Success — flyer / logo">
+          <figcaption>Dress for Success 👗</figcaption>
+        </figure>
       </div>
-    </div>
+    </section>
 
-    <div class="grid">
-      <div class="photo-card">
-        <img src="logo1.png" alt="ATX Food Hub">
-        <div class="caption">ATX Food Hub 🍴</div>
-      </div>
-      <div class="photo-card">
-        <img src="logo2.png" alt="Dress for Success">
-        <div class="caption">Dress for Success 👗</div>
-      </div>
-    </div>
-  </section>
+    <!-- RAPID FIRE -->
+    <section id="rapid" class="tab-panel" role="tabpanel" aria-hidden="true">
+      <article class="note card tilt-right">
+        <h2>Rapid Fire ⚡</h2>
 
-  <!-- Fun -->
-  <section id="fun" class="tab-content">
-    <div class="note">
-      <h2>Rapid Fire / Fun ✧</h2>
-      <p><strong>Fav thing about me:</strong> Spontaneity</p>
-      <p><strong>Travel dream:</strong> Remote mountains</p>
-      <p><strong>Best advice:</strong> YOLO — money comes back, memories don’t</p>
-      <p><strong>Death row meal:</strong> Pasta, mom’s biriyani & choc cake</p>
-    </div>
-  </section>
-</main>
+        <p><strong>What is your favorite thing about yourself?</strong> Spontaneity — making time for people i care about</p>
+        <p><strong>If you could travel anywhere right now:</strong> Remote mountains</p>
+        <p><strong>Best piece of advice you've received:</strong> Yolo because ive always aspired to live my life that way but my friend (now one of my roommates) whenever I’m debating spending money on some experience she says yolo because money comes back but experiences don’t, being spontaneous, she’s so endearing. Sometimes i put myself thru a lot of work because nothing replicates the mems</p>
+        <p><strong>What kind of music do you listen to when you’re in a great mood?</strong> Throwback :))</p>
+        <p><strong>If you had 1000 dollars, what would you spend it on?</strong> Food. obviously &lt;3 people to be honest though my love language is gift giving and one of my fav gifts ever was my first pair of crocs (pink) for my 18th bday because my friend knew ive never worn them before</p>
+        <p><strong>If all animals were the same size, what would win in a fight?</strong> A mouse bc did tom ever really catch up to jerry?? Plus they're too cute to eat everyone would take pity</p>
+        <p><strong>If you could time travel to the Victorian Era, what modern item would you show them?</strong> A vibrator bc women can pleasure themselves and never rely on a man (women's sexual freedom) and independence</p>
+        <p><strong>What would be your “death row meal?”</strong> Hard to choose, pasta because who doesn’t love a good creamy fettuccine? and my mom’s chicken biriyani LOVE me some spice, and chocolate cake because I NEVER forget dessert</p>
+      </article>
+    </section>
+  </main>
 
-<!-- Scrapbook doodles -->
-<div class="sticker star">★</div>
-<div class="sticker heart">♥</div>
-<div class="tape tape1"></div>
-<div class="tape tape2"></div>
+  <footer class="site-footer">
+    <p>Made with 💙, spontaneity, & lots of washi tape</p>
+  </footer>
 
-<!-- JavaScript -->
-<script>
-  const buttons=document.querySelectorAll('.tab-btn');
-  const panels=document.querySelectorAll('.tab-content');
-  buttons.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      buttons.forEach(b=>b.classList.remove('active'));
-      panels.forEach(p=>p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    });
-  });
-</script>
-
+  <!-- attach JS -->
+  <script src="script.js"></script>
 </body>
 </html>
