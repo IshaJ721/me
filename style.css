@@ -43,10 +43,15 @@ header {
   display: none;
   max-width: 800px;
   margin: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .tab-content.active {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card {
@@ -98,12 +103,13 @@ header {
 
 /* Floating stickers */
 .sticker {
-  position: absolute;
+  position: fixed;
   width: 60px;
   height: 60px;
   background-size: cover;
   animation: float 6s infinite ease-in-out;
   z-index: 1000;
+  pointer-events: none;
 }
 
 .sticker.cloud { background-image: url('cloud.jpeg'); left: 10%; top: 10%; animation-delay: 0s; }
@@ -113,76 +119,17 @@ header {
 
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(10deg); }
-}
-.tab-content {
-  display: none;
-  max-width: 800px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  50% { transform: translateY(-15px) rotate(10deg); }
 }
 
-.tab-content.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Tab button hover animation */
-.tab-btn:hover {
-  transform: scale(1.05);
-}
-
-/* Active tab scaling */
-.tab-btn.active {
-  background: #66a3ff;
-  color: #fff;
-  transform: scale(1.1);
-  transition: transform 0.3s, background 0.3s;
-}
-
-/* Bounce-in effect for tab content */
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-  80% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.tab-content.active {
-  animation: bounceIn 0.6s ease;
-}
-
-.floating {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  z-index: 1000;
-  pointer-events: none;
-  opacity: 0.9;
-  filter: hue-rotate(200deg); /* makes everything blue-ish */
-  transition: transform 0.1s ease;
-}
-
-.floating img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
+/* Quick adjustments */
 .tab-content img {
   max-width: 100%;
-  max-height: 70%; /* Adjusts big images */
+  max-height: 200px;
   object-fit: contain;
+}
+
+.volunteer-logos img {
+  max-width: 100px;
+  margin: 0.3rem;
 }
