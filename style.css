@@ -93,4 +93,37 @@
     .tab-btn{ padding:8px 10px; font-size:14px; }
   }
   
-  
+  /* extra floating doodles behind content */
+.background-doodle {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.3;
+  pointer-events: none;
+  width: 80px;
+  animation: float 12s ease-in-out infinite;
+}
+
+.background-doodle.star { width: 60px; }
+.background-doodle.heart { width: 50px; }
+.background-doodle.cloud { width: 120px; }
+
+/* tape on polaroid / photos */
+.photo-card, .polaroid-large {
+  position: relative;
+}
+.photo-card::before, .polaroid-large::before {
+  content:'';
+  position:absolute;
+  top:-12px; left:-12px;
+  width:50px; height:50px;
+  background:url('tape.jpeg') no-repeat center/contain;
+  transform:rotate(-15deg);
+}
+.photo-card::after, .polaroid-large::after {
+  content:'';
+  position:absolute;
+  top:-12px; right:-12px;
+  width:50px; height:50px;
+  background:url('tape.jpeg') no-repeat center/contain;
+  transform:rotate(10deg);
+}
