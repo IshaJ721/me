@@ -6,6 +6,7 @@ body {
   background: #cce0ff;
   color: #003366;
   overflow-x: hidden;
+  position: relative;
 }
 
 header {
@@ -38,7 +39,6 @@ header {
   background: #66a3ff;
   color: #fff;
   transform: scale(1.1);
-  transition: transform 0.3s, background 0.3s;
 }
 
 .tab-btn:hover {
@@ -58,24 +58,6 @@ header {
   display: block;
   opacity: 1;
   transform: translateY(0);
-  animation: bounceIn 0.6s ease;
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-  80% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .card {
@@ -98,22 +80,25 @@ header {
   margin-top: 0;
 }
 
+/* Profile Pic Bigger */
 .polaroid {
-  width: 150px;
+  width: 180px;
   border: 5px solid #cce0ff;
   box-shadow: 3px 3px 8px #6699cc;
   border-radius: 12px;
-  transition: transform 0.3s;
+  display: block;
+  margin: 0.5rem auto;
 }
 
-.polaroid:hover {
-  transform: rotate(5deg) scale(1.05);
+/* Roomies and food side by side */
+.photobooth {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .photobooth img {
-  display: block;
-  margin: 0.5rem auto;
-  width: 150px;
+  width: 160px;
   border: 3px solid #cce0ff;
   border-radius: 8px;
   box-shadow: 2px 2px 6px #6699cc;
@@ -121,17 +106,16 @@ header {
 }
 
 .photobooth img:hover {
-  transform: rotate(-2deg) scale(1.05);
+  transform: scale(1.05) rotate(-2deg);
   box-shadow: 4px 4px 12px #336699;
 }
 
 /* Biriyani smaller */
 .card img[alt="Biriyani"] {
   width: 100px;
-  margin: 0.5rem auto;
   display: block;
+  margin: 0.5rem auto;
   border-radius: 8px;
-  box-shadow: 2px 2px 6px #6699cc;
 }
 
 /* Volunteer logos */
@@ -140,19 +124,43 @@ header {
   margin: 0.3rem;
 }
 
-/* Tab images general sizing */
-.tab-content img {
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: contain;
+/* Background Animated Icons */
+.bg-icon {
+  position: absolute;
+  pointer-events: none;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  opacity: 0.3;
+  animation: floatScale 6s infinite ease-in-out alternate;
 }
 
-/* Floating stickers */
-.sticker {
-  position: fixed;
-  width: 50px;
+@keyframes floatScale {
+  0% { transform: translateY(0) scale(0.7) rotate(0deg); }
+  50% { transform: translateY(-20px) scale(1.1) rotate(15deg); }
+  100% { transform: translateY(0) scale(0.8) rotate(-10deg); }
+}
+/* Background Animated Icons */
+.bg-icon {
+  position: absolute;
+  pointer-events: none;
+  width: 50px;  /* smaller base size */
   height: 50px;
   background-size: cover;
-  z-index: 1000;
-  pointer-events: none;
+  opacity: 0.2;
+  animation: floatScale 6s infinite ease-in-out alternate;
+}
+
+/* Different speed per icon */
+.bg-icon:nth-child(odd) {
+  animation-duration: 5s;
+}
+.bg-icon:nth-child(even) {
+  animation-duration: 7s;
+}
+
+@keyframes floatScale {
+  0% { transform: translateY(0) scale(0.6) rotate(0deg); }
+  50% { transform: translateY(-25px) scale(1.2) rotate(15deg); }
+  100% { transform: translateY(0) scale(0.7) rotate(-10deg); }
 }

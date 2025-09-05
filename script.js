@@ -1,4 +1,4 @@
-// TAB FUNCTIONALITY
+// TAB FUNCTIONALITY (unchanged)
 const tabs = document.querySelectorAll('.tab-btn');
 const contents = document.querySelectorAll('.tab-content');
 
@@ -11,36 +11,27 @@ tabs.forEach((tab, i) => {
   });
 });
 
-// FLOATING STICKERS - more, gentle drift, lower on page
-const stickerImages = ['heart.jpeg','star.jpeg','cloud.jpeg','tape.jpeg','heart.jpeg','star.jpeg'];
-stickerImages.forEach((src, i) => {
-  const sticker = document.createElement('div');
-  sticker.className = 'sticker';
-  sticker.style.backgroundImage = `url(${src})`;
+// BACKGROUND ANIMATED ICONS - MORE OF THEM
+const iconImages = ['heart.jpeg','star.jpeg','cloud.jpeg','tape.jpeg']; 
 
-  // Start position random lower half of page
-  sticker.style.left = `${5 + Math.random() * 85}vw`;
-  sticker.style.top = `${55 + Math.random() * 40}vh`;
+// create 30+ icons randomly
+for (let i = 0; i < 30; i++) {
+  const icon = document.createElement('div');
+  icon.className = 'bg-icon';
+  const src = iconImages[Math.floor(Math.random() * iconImages.length)];
+  icon.style.backgroundImage = `url(${src})`;
 
-  document.body.appendChild(sticker);
+  // random start position
+  icon.style.left = `${Math.random() * 95}vw`;
+  icon.style.top = `${Math.random() * 90}vh`;
 
-  let rotation = Math.random() * 360;
-  let dirX = Math.random() < 0.5 ? -1 : 1;
-  let speed = 0.05 + Math.random() * 0.1;
+  // random scale size
+  const size = 30 + Math.random() * 70; // 30px to 100px
+  icon.style.width = `${size}px`;
+  icon.style.height = `${size}px`;
 
-  function animate() {
-    let x = parseFloat(sticker.style.left);
-    x += dirX * speed;
+  // random animation duration
+  icon.style.animationDuration = `${3 + Math.random() * 5}s`;
 
-    if (x < 0) dirX = 1;
-    if (x > 90) dirX = -1;
-
-    sticker.style.left = `${x}vw`;
-
-    rotation += 0.05;
-    sticker.style.transform = `rotate(${rotation}deg)`;
-
-    requestAnimationFrame(animate);
-  }
-  animate();
-});
+  document.body.appendChild(icon);
+}
