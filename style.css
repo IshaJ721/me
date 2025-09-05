@@ -1,129 +1,91 @@
-/* -------------------------
-   Blue Scrapbook — style.css
-   ------------------------- */
-
-   :root{
-    --bg:#eaf6ff;
-    --sky:#dff2ff;
-    --accent:#bfe3ff;
-    --ink:#083a6b;
-    --soft:#fffdf8;
-    --washi:#a7d3ff;
-  }
-  
-  /* reset-ish */
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family: 'Patrick Hand', cursive;
-    background: var(--bg) url('assets/paper-texture.png') repeat;
-    color:var(--ink);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-  }
-  
-  /* floating doodles (positioned in HTML) */
-  .doodle{ position:fixed; z-index:0; opacity:0.85; pointer-events:none; }
-  .doodle-cloud{ top:18px; left:20px; width:140px; animation:float 10s ease-in-out infinite; }
-  .doodle-star { right:28px; bottom:120px; width:100px; animation:float 6s ease-in-out infinite; }
-  .doodle-heart { top:140px; right:40px; width:80px; animation:float 8s ease-in-out infinite; }
-  .tape { opacity:0.95; width:140px; z-index:2; }
-  .tape-top-left{ top:30px; left:18px; transform:rotate(-12deg); }
-  .tape-top-right{ top:30px; right:18px; transform:rotate(8deg); }
-  
-  /* header */
-  .site-header{ text-align:center; padding:28px 12px 10px; position:relative; z-index:3; }
-  .header-inner{ display:inline-block; background:linear-gradient(90deg,var(--accent),#d9f0ff); padding:12px 22px; border-radius:18px; box-shadow: 0 8px 18px rgba(3,63,114,0.09); border: 2px dashed rgba(3,63,114,0.08); }
-  .logo-title{ margin:8px 0 0; font-family:'Pacifico', cursive; font-size:38px; color:var(--ink); text-shadow:2px 2px rgba(91,146,205,0.2); }
-  .subtitle{ margin:6px 0 0; color:rgba(3,63,114,0.8); font-size:14px; }
-  
-  /* tabs */
-  .tabs{ display:flex; justify-content:center; gap:10px; margin-top:12px; z-index:4; }
-  .tab-btn{ background:var(--soft); border-radius:18px; padding:8px 14px; border:0; font-family:'Shadows Into Light', cursive; font-size:16px; cursor:pointer; box-shadow: 0 6px 0 rgba(18,86,143,0.08); transition: transform .18s ease, box-shadow .18s; }
-  .tab-btn:hover{ transform: translateY(-4px) rotate(-2deg); }
-  .tab-btn.active{ background:var(--ink); color:white; transform: translateY(-6px) rotate(2deg); box-shadow: 0 10px 18px rgba(3,79,132,0.18); }
-  
-  /* main container */
-  .container{ max-width:1080px; margin:28px auto; padding:0 18px 60px; position:relative; z-index:5; }
-  
-  /* cards / notes / polaroids */
-  .card{ background:var(--soft); border-radius:16px; padding:18px; margin:18px 0; box-shadow: 8px 12px 0 rgba(91,146,205,0.06); border: 3px dashed var(--washi); transform-origin:center; transition: transform .25s ease; }
-  .card:hover{ transform: translateY(-6px) rotate(-1deg) scale(1.01); }
-  
-  .note h2{ margin:0 0 8px; font-family:'Pacifico',cursive; color:var(--ink); font-size:22px; }
-  
-  .answer{ margin:8px 0; line-height:1.45; }
-  
-  /* polaroid large (video) */
-  .polaroid-large{ max-width:760px; margin:18px auto; padding:12px; border-radius:12px; border:10px solid #fff; border-bottom:56px solid #fff; box-shadow: 12px 16px 0 rgba(91,146,205,0.12); transform:rotate(-2deg); }
-  .polaroid-large iframe{ width:100%; height:420px; border-radius:8px; display:block; }
-  
-  /* gallery */
-  .gallery{ display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:12px; align-items:start; }
-  .photo-card{ background:#ffffff; border-radius:12px; padding:8px; box-shadow:6px 8px 0 rgba(91,146,205,0.08); overflow:hidden; transform-origin:center; }
-  .photo-card img{ width:100%; height:220px; object-fit:cover; border-radius:8px; display:block; transition: transform .32s ease; }
-  .photo-card figcaption{ text-align:center; font-size:14px; margin-top:8px; color:var(--ink); font-style:italic; }
-  
-  /* tilts & micro-animations classes (applied by JS too) */
-  .tilt-left{ transform: rotate(-4deg); }
-  .tilt-right{ transform: rotate(5deg); }
-  .tilt-small{ transform: rotate(-2deg); }
-  .wiggle{ animation:wiggle 2.5s infinite ease-in-out; transform-origin:center; }
-  .floaty{ animation:float 6s ease-in-out infinite; }
-  
-  /* rapid-fire */
-  .note p{ margin:6px 0; }
-  
-  /* footer */
-  .site-footer{ text-align:center; padding:28px 0; color:rgba(3,63,114,0.7); font-family:'Pacifico',cursive; }
-  
-  /* animations */
-  @keyframes float { 0%{ transform:translateY(0) } 50%{ transform:translateY(-16px) } 100%{ transform:translateY(0) } }
-  @keyframes wiggle { 0%,100%{ transform:rotate(-2deg) } 50%{ transform:rotate(3deg) } }
-  @keyframes popIn { 0%{ opacity:0; transform:scale(.92) } 100%{ opacity:1; transform:scale(1) } }
-  
-  /* responsive tweaks */
-  @media (max-width:900px){
-    .polaroid-large iframe{ height:260px; }
-    .photo-card img{ height:160px; }
-  }
-  @media (max-width:480px){
-    .logo-title{ font-size:28px; }
-    .tab-btn{ padding:8px 10px; font-size:14px; }
-  }
-  
-  /* extra floating doodles behind content */
-.background-doodle {
-  position: absolute;
-  z-index: 0;
-  opacity: 0.3;
-  pointer-events: none;
-  width: 80px;
-  animation: float 12s ease-in-out infinite;
+body {
+  margin: 0;
+  font-family: 'Patrick Hand', cursive;
+  background: linear-gradient(135deg, #cce7ff, #e6f3ff);
+  color: #333;
 }
 
-.background-doodle.star { width: 60px; }
-.background-doodle.heart { width: 50px; }
-.background-doodle.cloud { width: 120px; }
+header {
+  text-align: center;
+  padding: 20px;
+}
 
-/* tape on polaroid / photos */
-.photo-card, .polaroid-large {
+h1 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2.5em;
+  color: #005f99;
+}
+
+.tabs {
+  margin-top: 15px;
+}
+
+.tab-btn {
+  background: #b3daff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 12px;
+  font-family: 'Patrick Hand', cursive;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab-btn.active {
+  background: #80c1ff;
+  box-shadow: 0 4px 10px rgba(0, 95, 153, 0.3);
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.page {
   position: relative;
+  padding: 20px;
 }
-.photo-card::before, .polaroid-large::before {
-  content:'';
-  position:absolute;
-  top:-12px; left:-12px;
-  width:50px; height:50px;
-  background:url('tape.jpeg') no-repeat center/contain;
-  transform:rotate(-15deg);
+
+.answer {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-.photo-card::after, .polaroid-large::after {
-  content:'';
-  position:absolute;
-  top:-12px; right:-12px;
-  width:50px; height:50px;
-  background:url('tape.jpeg') no-repeat center/contain;
-  transform:rotate(10deg);
+
+.polaroid {
+  background: #fff;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  border: 3px solid #e6f3ff;
+  transform: rotate(-2deg);
+  box-shadow: 2px 6px 12px rgba(0,0,0,0.15);
+}
+
+.polaroid img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-photo {
+  margin: 0 auto 20px auto;
+  display: block;
+  transform: rotate(0deg);
+}
+
+.collage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stickers img {
+  width: 60px;
+  margin: 5px;
 }
