@@ -1,30 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Isha Jannu — Texas Bluebonnets Application (Scrapbook)</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Isha Jannu — Texas Bluebonnets Application (Notebook Scrapbook)</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- decorative stickers / sparkles -->
-  <div class="sticker cloud"></div>
-  <div class="sticker star"></div>
-  <div class="sticker heart"></div>
+<div class="scene">
+  <aside class="tabs" role="tablist" aria-label="Notebook sections">
+    <button class="tab active" data-target="tab-info">Applicant Info</button>
+    <button class="tab" data-target="tab-records">Academic Records</button>
+    <button class="tab" data-target="tab-short">Short Answers</button>
+    <button class="tab" data-target="tab-pick2">Pick 2</button>
+    <button class="tab" data-target="tab-fun">Fun Qs</button>
+    <button class="tab" data-target="tab-sig">Signature</button>
+  </aside>
 
-  <header class="cover">
-    <img src="blue-washi.png" class="washi top" alt="washi" />
-    <h1>Texas Bluebonnets Application</h1>
-    <h2>Applicant: <span class="name">Isha Jannu</span></h2>
-    <p class="sub">A scrapbook-styled submission — all original answers preserved below.</p>
-  </header>
+  <main class="notebook">
+    <header class="notebook-header">
+      <div class="me-photo">
+        <img src="me-placeholder.jpeg" alt="Photo of Isha (replace with your photo)" />
+        <div class="photo-caption">Photo of me (replace with your photo)</div>
+      </div>
+      <div class="title">
+        <h1>Texas Bluebonnets Application — Isha Jannu</h1>
+        <p class="sub">Application Part II — Presented scrapbook-style with notebook tabs</p>
+      </div>
+    </header>
 
-  <main class="content">
-
-    <section class="card applicant-info">
-      <h3>Applicant Information:</h3>
-      <div class="verbatim">
+    <section class="pages">
+      <article id="tab-info" class="page active" role="tabpanel">
+        <h2>Applicant Information:</h2>
+        <div class="verbatim">
 Applicant Information: 
 
 Preferred Full Name: Isha Jannu
@@ -33,61 +41,86 @@ Current UT Address: 2011 San Antonio Street APT 1817 Austin, TX 78705
 Phone Number: 2145856729
 Email Address: ishajannu@utexas.edu
 UT eid: isj283
-      </div>
-    </section>
+        </div>
 
-    <section class="card academic-records">
-      <h3>Academic Records:</h3>
-      <div class="verbatim">
+        <div class="photo-row">
+          <figure class="polaroid">
+            <img src="friends-placeholder.jpeg" alt="friends placeholder" />
+            <figcaption>Friends (add picture)</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img src="family-placeholder.jpeg" alt="family placeholder" />
+            <figcaption>Family / Brother / Mom (add picture)</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article id="tab-records" class="page" role="tabpanel">
+        <h2>Academic Records:</h2>
+        <div class="verbatim">
 Academic Records:
 
 Cumulative GPA:  *If you are a transfer student, list your most recent school’s GPA.* 3.23
 Year: Sophomore
 Major: Computer Science
-      </div>
-    </section>
+        </div>
 
-    <section class="card short-answers">
-      <h3>Short Answer Questions:</h3>
-      <p class="note blue">You may be as creative as you would like in your response to these questions. We encourage you to be your authentic self and that could involve pictures, memes, etc. Show off your personality! Please make sure your fonts are easily readable.</p>
+        <div class="support small">
+          <div class="sticky small-note">UT Coursework Highlights (add image)</div>
+          <figure class="polaroid small">
+            <img src="matcha-placeholder.jpeg" alt="matcha placeholder" />
+            <figcaption>Study vibes / matcha (add picture)</figcaption>
+          </figure>
+        </div>
+      </article>
 
-      <h4>Required. Limit your responses to 250 words or less.</h4>
+      <article id="tab-short" class="page" role="tabpanel">
+        <h2>Short Answer Questions:</h2>
 
-      <h5>Why do you want to join Texas Bluebonnets?</h5>
-      <div class="verbatim">
+        <div class="verbatim">
+Short Answer Questions: 
+You may be as creative as you would like in your response to these questions. We encourage you to be your authentic self and that could involve pictures, memes, etc. 
+Show off your personality! Please make sure your fonts are easily readable. 
+
+Required. Limit your responses to 250 words or less.
+Why do you want to join Texas Bluebonnets? We are not looking for one particular response, be true to yourself! 
 As a sophomore, I want to meet people outside my major that value the same things as me, and I think the pillars in CLASS fulfill that perfectly. This was the one place, at your info sessions, that I felt was genuine, because I'm an introvert and you all truly made me feel comfy being myself. Beyond my roomies, I would love to find a group of cuties who I can call family to do cutie activities with! &lt;3
-      </div>
 
-      <h5>Pick one of our core pillars (character, leadership, academics, service, and spirit) and explain how you embody and value this pillar.</h5>
-      <div class="verbatim">
+Pick one of our core pillars (character, leadership, academics, service, and spirit) and explain how you embody and value this pillar. 
 I'm really passionate about youth literacy after volunteer tutoring for years and I’m grateful to have grown up with an emphasis on the value of education. Realizing that illiteracy is a widespread epidemic made me want to advocate for it, by speaking at a TEDxYouth event and how technology can help us solve it together. Similarly, I also have spent many hours at the North Texas Food bank with my family and have continued that path of aiding food insecurity here at UT, through an org called ATX Food Hub. As the map improvement lead, we were able to provide a centralized hub to consolidate discounted/free food resources for students and Austinites– that’s why I’m especially excited if I continued that journey with Bluebonnets with Sunday Lunchbox. Additionally, I’m currently part of Project Advance Austin's working with the Dress for Success nonprofit for helping women achieve their professional dreams. I'm majoring in computer science simply because I want to develop tech to improve the everyday lives of people and that's honestly my life goal.
-      </div>
-    </section>
+        </div>
 
-    <section class="card pick-two">
-      <h3>Pick 2 questions of those listed to answer (limit each to 200 words)</h3>
+        <div class="support">
+          <figure class="polaroid">
+            <img src="volunteer-placeholder.jpeg" alt="volunteering placeholder" />
+            <figcaption>Volunteering / Food bank (add picture)</figcaption>
+          </figure>
+        </div>
+      </article>
 
-      <h5>What are you most passionate about in your life right now?</h5>
-      <div class="verbatim">
-I’m passionate about living life to the fullest before I’m stuck in a corporate job (the 9-5 is overrated 🤨). Along those lines, I’m trying to find my personal brand and make time to find joy in the small things even with a busy schedule. For instance, I designed my room in my apartment (my first one 🥹) with a sage green theme, leaf fairy lights, and wooden/gold accents. I personally painted my decor on canvas and reconnecting with my creative side made me really happy– we get too caught up in life sometimes to make time for relaxing hobbies.
-      </div>
+      <article id="tab-pick2" class="page" role="tabpanel">
+        <h2>Pick 2 Questions</h2>
+        <div class="verbatim">
+Pick 2 questions of those listed to answer. Limit each of your responses to 200 words or less.
+What do you value most in a friendship?
+What do you think people sometimes get wrong about you? 
+What are you most passionate about in your life right now? I’m passionate about living life to the fullest before I’m stuck in a corporate job (the 9-5 is overrated 🤨). Along those lines, I’m trying to find my personal brand and make time to find joy in the small things even with a busy schedule. For instance, I designed my room in my apartment (my first one 🥹) with a sage green theme, leaf fairy lights, and wooden/gold accents. I personally painted my decor on canvas and reconnecting with my creative side made me really happy– we get too caught up in life sometimes to make time for relaxing hobbies. 
 
-      <h5>If you could write a book on any topic, what would it be?</h5>
-      <div class="verbatim">
-My lifelong dream has been to write a book– I’m a HUGE fiction reader, especially fantasy, dystopia, sci-fi, and romance. Later in life, I would love to move to some remote town in Europe (Italy is a strong contender?? 😁) and write my novel in some small cottage and maybe do my tech job remotely. I would write an awesome sci-fi romance, the next Hunger Games or Fourth Wing– I’m always open to good book recs– and I live for a good plot. I’d probably write a romance set in space with some astronauts– I especially love Ali Hazelwood’s style of bridging romance and women in STEM for nerds like me 😋so I would probably implement something similar.
-      </div>
-    </section>
+If you could write a book on any topic, what would it be? 
+	My lifelong dream has been to write a book– I’m a HUGE fiction reader, especially fantasy, dystopia, sci-fi, and romance. Later in life, I would love to move to some remote town in Europe (Italy is a strong contender?? 😁) and write my novel in some small cottage and maybe do my tech job remotely. I would write an awesome sci-fi romance, the next Hunger Games or Fourth Wing– I’m always open to good book recs– and I live for a good plot. I’d probably write a romance set in space with some astronauts– I especially love Ali Hazelwood’s style of bridging romance and women in STEM for nerds like me 😋so I would probably implement something similar. 
+        </div>
 
-    <section class="card important-experience">
-      <h3>Tell us about an important experience you’ve had. How did it impact you?</h3>
-      <div class="verbatim">
-Tell us about an important experience you’ve had. How did it impact you?
-      </div>
-    </section>
+        <div class="photo-row">
+          <figure class="polaroid">
+            <img src="books-placeholder.jpeg" alt="books placeholder" />
+            <figcaption>Books / writing (add picture)</figcaption>
+          </figure>
+        </div>
+      </article>
 
-    <section class="card quick-fun">
-      <h3>Quick Responses (1-3 sentences each)</h3>
-      <div class="verbatim">
+      <article id="tab-fun" class="page" role="tabpanel">
+        <h2>Fun Questions</h2>
+        <div class="verbatim">
 Required. Answer all of the following questions. Limit your responses to 1-3 sentences each.
 What is your favorite thing about yourself? Spontaneity– because it enables me to make time for the people I care about, and makes the small things feel super special. For example, when my high school friend visited UT for the first time last semester, I turned Top Golf and Taco Bell into her first nightly college adventure, and I’m incredibly grateful that she will always take that memory with her. 
 If you could travel anywhere right now, where would you go? I would go to a remote beach. There’s something so calming about the ocean– it reminds me of my childhood in Jersey. Plus, I will never say no to a swim #ilovebartonsprings
@@ -99,30 +132,51 @@ If you could time travel to the Victorian Era, what modern item would you show t
 What would be your “death row meal?” Hard to choose– pasta because who doesn’t love a good creamy fettuccine? And of course, my mom’s chicken biriyani because I LOVE spice, and chocolate cake because I NEVER forget dessert 😋
 Fill in the blank: I am “most likely to……” accidentally throw my phone in the trash can or dryer (true stories) or something else horrendously stupid 😅
 What is your favorite emoji? 😚😋because I use the second one to express my happiness, and the first to express my gratitude or love. 
-Optional Question:
+ Optional Question:
 Is there anything else you would like to tell us about yourself that you have not already covered?
-Thank you for giving me the chance to express myself &lt;3 I’ve never used my technical skills in a way that’s solely for this purpose so you have my gratitude. 
-      </div>
-    </section>
 
-    <section class="card signature">
-      <h3>Signed Statement</h3>
-      <div class="verbatim">
+Thank you for giving me the chance to express myself &lt;3 I’ve never used my technical skills in a way that’s solely for this purpose so you have my gratitude. 
+        </div>
+
+        <div class="support-photos">
+          <figure class="polaroid small">
+            <img src="food-placeholder.jpeg" alt="food placeholder" />
+            <figcaption>Food / biriyani (add picture)</figcaption>
+          </figure>
+          <figure class="polaroid small">
+            <img src="matcha-placeholder.jpeg" alt="matcha placeholder" />
+            <figcaption>Matcha / cozy (add picture)</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article id="tab-sig" class="page" role="tabpanel">
+        <h2>Signed Statement</h2>
+        <div class="verbatim">
 Signed Statement:
 By signing and submitting this statement, you agree that the information provided to Texas Bluebonnets on your entire application is accurate and true to the best of your knowledge.
- 
+
 
 Isha Jannu
 
   Signature
-      </div>
+        </div>
+
+        <div class="signature-area">
+          <img src="tape.jpeg" class="tape" alt="tape" />
+          <div class="handwritten">Isha Jannu</div>
+        </div>
+      </article>
     </section>
-
   </main>
+</div>
 
-  <footer class="footer">
-    <img src="blue-washi.png" class="washi bottom" alt="washi" />
-    <p class="tiny">This page preserves the original application content exactly as provided.</p>
-  </footer>
+<!-- floating stickers -->
+<img src="heart.jpeg" class="floating heart" alt="heart sticker" />
+<img src="star.jpeg" class="floating star" alt="star sticker" />
+<img src="cloud.jpeg" class="floating cloud" alt="cloud sticker" />
+<img src="tape.jpeg" class="floating tape-sticker" alt="tape sticker" />
+
+<script src="script.js"></script>
 </body>
 </html>
