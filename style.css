@@ -124,32 +124,30 @@ header {
   margin: 0.3rem;
 }
 
-/* Background Animated Icons */
+/* Background Animated Icons - behind content */
 .bg-icon {
   position: absolute;
   pointer-events: none;
-  width: 80px;
-  height: 80px;
+  width: 50px;  /* base size */
+  height: 50px;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.1; /* lower opacity so it's subtle */
   animation: floatScale 6s infinite ease-in-out alternate;
+  z-index: 0; /* behind everything */
+}
+
+/* Cards and main content above icons */
+.card, .tab-content, header, .tabs {
+  position: relative;
+  z-index: 1; /* above icons */
 }
 
 @keyframes floatScale {
-  0% { transform: translateY(0) scale(0.7) rotate(0deg); }
+  0% { transform: translateY(0) scale(0.6) rotate(0deg); }
   50% { transform: translateY(-20px) scale(1.1) rotate(15deg); }
-  100% { transform: translateY(0) scale(0.8) rotate(-10deg); }
+  100% { transform: translateY(0) scale(0.7) rotate(-10deg); }
 }
-/* Background Animated Icons */
-.bg-icon {
-  position: absolute;
-  pointer-events: none;
-  width: 50px;  /* smaller base size */
-  height: 50px;
-  background-size: cover;
-  opacity: 0.2;
-  animation: floatScale 6s infinite ease-in-out alternate;
-}
+
 
 /* Different speed per icon */
 .bg-icon:nth-child(odd) {
