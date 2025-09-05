@@ -1,146 +1,143 @@
+:root {
+  --blue-light:#e6f2ff;
+  --blue-med:#b3d9ff;
+  --blue-dark:#5d9cec;
+  --ink:#034f84;
+  --note:#fffdf5;
+  --accent:#ffe6f2;
+}
+
+*{box-sizing:border-box;}
 body {
-  font-family: 'Patrick Hand', cursive;
-  background: #e6f0fa;
-  margin: 0;
-  padding: 0;
-  color: #034f84;
+  margin:0;
+  background:linear-gradient(180deg,var(--blue-light),#f7fbff);
+  font-family:'Patrick Hand',cursive;
+  color:var(--ink);
+  overflow-x:hidden;
 }
 
 header {
-  text-align: center;
-  padding: 1rem;
-  background: #99c2ff;
-  border-bottom: 4px solid #034f84;
+  text-align:center;
+  padding:2rem 1rem 1.2rem;
+  background:var(--blue-med);
+  border-bottom:8px dotted var(--blue-dark);
+  position:relative;
+}
+header::after {
+  content:"✿ ✧ ✿";
+  font-family:'Gloria Hallelujah',cursive;
+  font-size:1.2rem;
+  position:absolute;
+  bottom:-0.9rem;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--blue-dark);
+  background:var(--blue-light);
+  padding:0 .8rem;
+  border-radius:12px;
 }
 
 .title {
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 2.5rem;
-  margin: 0;
+  font-family:'Shadows Into Light',cursive;
+  font-size:2.6rem;
+  margin:0;
+  color:white;
+  text-shadow:2px 2px var(--blue-dark);
 }
 
-nav {
-  margin-top: 0.5rem;
+/* Tabs */
+nav.tabs {
+  margin-top:1rem;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:0.7rem;
+}
+.tab-btn {
+  border:none;
+  background:var(--note);
+  padding:0.6rem 1.2rem;
+  border-radius:18px;
+  font-family:'Gloria Hallelujah',cursive;
+  font-size:1rem;
+  cursor:pointer;
+  box-shadow:3px 3px 0 var(--blue-dark);
+  transition:all .2s;
+}
+.tab-btn:hover { transform:rotate(-3deg) scale(1.05);}
+.tab-btn.active {
+  background:var(--blue-dark);
+  color:white;
+  transform:rotate(2deg) scale(1.1);
 }
 
-.tablink {
-  background: #cce0ff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  margin: 0.2rem;
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-family: 'Patrick Hand', cursive;
+main { padding:2rem 1rem; max-width:1000px; margin:auto;}
+
+.tab-content { display:none;}
+.tab-content.active { display:block; animation:flipIn .7s ease both;}
+
+@keyframes flipIn {
+  0%{transform:rotateY(-90deg) scale(.8); opacity:0;}
+  60%{transform:rotateY(10deg) scale(1.05);}
+  100%{transform:rotateY(0) scale(1); opacity:1;}
 }
 
-.tablink.active {
-  background: #034f84;
-  color: white;
-}
-
-.tab-content {
-  display: none;
-  padding: 2rem;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* Scrapbook Notes */
+/* Scrapbook note */
 .note {
-  background: #fff;
-  border: 2px dashed #99c2ff;
-  padding: 1.5rem;
-  margin: 1rem auto;
-  max-width: 700px;
-  border-radius: 16px;
-  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  background:var(--note);
+  border:3px dashed var(--blue-med);
+  border-radius:12px;
+  padding:1.2rem 1.5rem;
+  margin:1.5rem auto;
+  position:relative;
+  box-shadow:6px 6px 0 var(--blue-med);
+}
+.note::before {
+  content:"";
+  position:absolute;
+  top:-15px; left:20px;
+  width:60px; height:30px;
+  background:rgba(255,255,255,0.8);
+  border:2px solid var(--blue-dark);
+  transform:rotate(-5deg);
+  box-shadow:2px 2px var(--blue-dark);
 }
 
-.mini-note {
-  background: #e6f0fa;
-  border: 2px dashed #99c2ff;
-  border-radius: 10px;
-  padding: 1rem;
-  text-align: center;
-  font-family: "Shadows Into Light", cursive;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-  margin: 1rem;
+.note h2 {
+  font-family:'Gloria Hallelujah',cursive;
+  margin-top:0;
+  font-size:1.6rem;
+  color:var(--blue-dark);
 }
 
-/* Polaroid Style */
+/* Polaroid look */
 .polaroid {
-  background: white;
-  padding: 10px;
-  border: 2px solid #ccc;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-  text-align: center;
-  margin: 1rem auto;
-  border-radius: 6px;
+  background:white;
+  padding:0.6rem;
+  margin:1.5rem auto;
+  max-width:700px;
+  border:8px solid #fff;
+  border-bottom:50px solid #fff;
+  box-shadow:8px 8px 0 var(--blue-dark);
+  transform:rotate(-2deg);
 }
-
+.polaroid iframe,
 .polaroid img {
-  max-width: 100%;
-  border-radius: 4px;
+  width:100%; border:none; border-radius:6px;
 }
+.caption { text-align:center; margin-top:0.5rem; font-style:italic;}
 
-/* Washi + Tape Styles */
-.washi {
-  border: 4px solid #99c2ff;
-}
-.taped {
-  position: relative;
-}
-.taped::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 30%;
-  width: 40%;
-  height: 20px;
-  background: rgba(255,255,153,0.8);
-  transform: rotate(-3deg);
-  z-index: 1;
-}
-
-/* Video Frame */
-.video-frame {
-  margin: 2rem auto;
-  max-width: 600px;
-  text-align: center;
-  background: white;
-  padding: 1rem;
-  border: 8px solid #fff;
-  border-bottom: 40px solid #fff;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-}
-
-.video-frame iframe {
-  width: 100%;
-  height: 315px;
-  border-radius: 8px;
-}
-
-.caption {
-  font-size: 0.95rem;
-  font-style: italic;
-  margin-top: 0.5rem;
-  color: #034f84;
-}
-
-/* Grid Layout for Photos + Logos */
 .grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;
 }
-
-.logo {
-  max-width: 120px;
-  max-height: 120px;
-  display: block;
-  margin: 0 auto 0.5rem;
+.photo-card, .mini-note {
+  background:white;
+  padding:0.6rem;
+  border-radius:10px;
+  box-shadow:4px 4px 0 var(--blue-med);
+  max-width:280px;
+  transform:rotate(-3deg);
 }
+.photo-card img {width:100%; border-radius:6px;}
+.mini-note {text-align:center; padding:1rem; background:var(--accent);}
+.logo {max-width:100px;}

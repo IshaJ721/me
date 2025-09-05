@@ -1,118 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Isha Jannu | Scrapbook Application</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Isha's Scrapbook 💙</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Shadows+Into+Light&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1 class="title">💙 Isha's Scrapbook 💙</h1>
-    <nav>
-      <button class="tablink" onclick="openTab('info')">Info</button>
-      <button class="tablink" onclick="openTab('academics')">Academics</button>
-      <button class="tablink" onclick="openTab('service')">Service</button>
-      <button class="tablink" onclick="openTab('fun')">Fun</button>
-    </nav>
-  </header>
 
-  <!-- Info Tab -->
+<header>
+  <h1 class="title">💙 Isha's Blue Scrapbook 💙</h1>
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="info">Info</button>
+    <button class="tab-btn" data-tab="academics">Academics</button>
+    <button class="tab-btn" data-tab="service">Service</button>
+    <button class="tab-btn" data-tab="fun">Fun</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Info -->
   <section id="info" class="tab-content active">
     <div class="note">
-      <h2>Applicant Information</h2>
-      <p><strong>Preferred Full Name:</strong> Isha Jannu</p>
+      <h2>Applicant Info ✧</h2>
+      <p><strong>Name:</strong> Isha Jannu</p>
       <p><strong>Pronouns:</strong> she/her/hers</p>
-      <p><strong>Current UT Address:</strong> (to add)</p>
-      <p><strong>Phone Number:</strong> 2145856729</p>
-      <p><strong>Email Address:</strong> ishajannu@utexas.edu</p>
+      <p><strong>Phone:</strong> 2145856729</p>
+      <p><strong>Email:</strong> ishajannu@utexas.edu</p>
       <p><strong>UT eid:</strong> isj283</p>
     </div>
   </section>
 
-  <!-- Academics Tab -->
+  <!-- Academics -->
   <section id="academics" class="tab-content">
     <div class="note">
-      <h2>Academic Records</h2>
-      <p><strong>Cumulative GPA:</strong> 3.23</p>
+      <h2>Academics 🎓</h2>
       <p><strong>Year:</strong> Sophomore</p>
       <p><strong>Major:</strong> Computer Science</p>
+      <p><strong>GPA:</strong> 3.23</p>
     </div>
   </section>
 
-  <!-- Service Tab -->
+  <!-- Service -->
   <section id="service" class="tab-content">
     <div class="note">
-      <h2>Service</h2>
+      <h2>Service ✿</h2>
       <p>
-        service— I'm really passionate about youth literacy after volunteer tutoring for years and I’m grateful to have grown up emphasizing the value of education. Realizing that illiteracy is an epidemic made me want to advocate for it, through a TEDxYouth event. Similarly,  I also have spent many hours at the North Texas Food bank with my family and have continued that path of aiding food insecurity here at UT, through an org called ATX Food Hub. As the map improvement lead, we were able to provide a centralized hub to consolidate discounted/free food resources for students and Austinites– that’s why I’m especially excited if I continued that journey with Bluebonnets with Sunday Lunchbox. Additionally, I’m currently part of Project Advance Austin's working with the Dress for Success nonprofit for helping women achieve their professional dreams. I'm majoring in computer science simply because I want to develop tech to improve the everyday lives of people (sorry if I sound corny but its true 😭) and that's honestly my life goal.
+service— I'm really passionate about youth literacy after volunteer tutoring for years and I’m grateful to have grown up emphasizing the value of education. Realizing that illiteracy is an epidemic made me want to advocate for it, through a TEDxYouth event. Similarly,  I also have spent many hours at the North Texas Food bank with my family and have continued that path of aiding food insecurity here at UT, through an org called ATX Food Hub. As the map improvement lead, we were able to provide a centralized hub to consolidate discounted/free food resources for students and Austinites– that’s why I’m especially excited if I continued that journey with Bluebonnets with Sunday Lunchbox. Additionally, I’m currently part of Project Advance Austin's working with the Dress for Success nonprofit for helping women achieve their professional dreams. I'm majoring in computer science simply because I want to develop tech to improve the everyday lives of people (sorry if I sound corny but its true) and thats kinda my life goal.
       </p>
     </div>
 
-    <!-- TED Talk Embed -->
-    <div class="polaroid taped video-frame">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/IU9ZuaH1vms?start=2" 
-        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-      <p class="caption">My TEDxYouth Talk 🎤</p>
+    <div class="polaroid">
+      <iframe src="https://www.youtube.com/embed/IU9ZuaH1vms?start=2" allowfullscreen></iframe>
+      <div class="caption">🎤 My TEDxYouth Talk</div>
     </div>
 
-    <!-- Volunteer Photos -->
     <div class="grid">
-      <div class="photo polaroid washi">
-        <img src="volunteer1.JPG" alt="Tutoring youth literacy">
-        <p class="caption">Working With Youth 📚</p>
+      <div class="photo-card">
+        <img src="volunteer1.jpg" alt="Tutoring youth literacy">
+        <div class="caption">Tutoring youth literacy 📚</div>
       </div>
-      <div class="photo polaroid taped">
-        <img src="volunteer2.jpeg" alt="Helping at North Texas Food Bank">
-        <p class="caption">North Texas Food Bank 🥫</p>
+      <div class="photo-card">
+        <img src="volunteer2.jpg" alt="North Texas Food Bank">
+        <div class="caption">North Texas Food Bank 🥫</div>
       </div>
     </div>
 
-    <!-- Logos -->
     <div class="grid">
       <div class="mini-note">
-        <img src="logo1.png" alt="ATX Food Hub Logo" class="logo">
+        <img class="logo" src="logo1.png" alt="ATX Food Hub logo">
         <p>ATX Food Hub 🍴</p>
       </div>
       <div class="mini-note">
-        <img src="logo2.png" alt="425 Tutoring" class="logo">
-        <p>425 Tutoring 🍎</p>
+        <img class="logo" src="logo2.png" alt="Dress for Success logo">
+        <p>Dress for Success 👗</p>
       </div>
     </div>
   </section>
 
-  <!-- Fun Tab -->
+  <!-- Fun -->
   <section id="fun" class="tab-content">
     <div class="note">
-      <h2>Fun Facts</h2>
-      <p><strong>Favorite thing about myself:</strong> Spontaneity & making time for people I care about</p>
-      <p><strong>If I could travel anywhere:</strong> Remote mountains 🏔️</p>
-      <p><strong>Best advice:</strong> YOLO — money comes back, experiences don’t ✨</p>
-      <p><strong>Happy music:</strong> Throwbacks 🎶</p>
-      <p><strong>If I had $1000:</strong> Food (& gifts for friends 💝)</p>
-      <p><strong>Animal fight winner:</strong> A mouse 🐭 (Jerry supremacy)</p>
-      <p><strong>Victorian item:</strong> A vibrator (women’s independence ✊)</p>
-      <p><strong>Death row meal:</strong> Pasta, my mom’s chicken biriyani, & chocolate cake 🍝🍗🍰</p>
-      <p><strong>I am most likely to...</strong> (to fill in)</p>
-      <p><strong>Favorite emoji:</strong> 😚😋</p>
+      <h2>Rapid Fire / Fun ✧</h2>
+      <p><strong>Fav thing about me:</strong> Spontaneity</p>
+      <p><strong>Travel dream:</strong> Remote mountains</p>
+      <p><strong>Best advice:</strong> YOLO — money comes back, memories don’t</p>
+      <p><strong>Death row meal:</strong> Pasta, mom’s biriyani & choc cake</p>
     </div>
   </section>
+</main>
 
-  <script>
-    function openTab(tabName) {
-      let i, x, tablinks;
-      x = document.getElementsByClassName("tab-content");
-      for (i = 0; i < x.length; i++) {
-        x[i].classList.remove("active");
-      }
-      tablinks = document.getElementsByClassName("tablink");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-      }
-      document.getElementById(tabName).classList.add("active");
-      event.currentTarget.classList.add("active");
-    }
-  </script>
+<!-- JavaScript for Tabs -->
+<script>
+  const buttons=document.querySelectorAll('.tab-btn');
+  const panels=document.querySelectorAll('.tab-content');
+  buttons.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      buttons.forEach(b=>b.classList.remove('active'));
+      panels.forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
 </body>
 </html>
