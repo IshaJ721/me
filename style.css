@@ -1,105 +1,137 @@
+/* Base Styles */
 body {
   margin: 0;
   font-family: 'Shadows Into Light', cursive, sans-serif;
-  background: #cce0ff url('blue-sticky.png');
-  background-size: cover;
-  color: #003366;
+  background: #e0f0ff url('blue-sticky.png') repeat;
+  color: #0a1f44;
   overflow-x: hidden;
 }
 
+/* Tabs */
 .tabs {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
+  gap: 0.5rem;
+  margin: 1rem 0;
 }
 
 .tab-button {
-  background: #99ccff;
-  border: 2px solid #336699;
+  background: #a2d2ff;
+  border: none;
   padding: 0.5rem 1rem;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 10px;
+  color: #0a1f44;
+  transition: transform 0.2s;
+}
+
+.tab-button:hover {
+  transform: scale(1.1);
 }
 
 .tab-button.active {
-  background: #336699;
-  color: #fff;
+  background: #0077b6;
+  color: #ffffff;
 }
 
-.tab-content {
-  max-width: 900px;
-  margin: 0 auto 4rem auto;
-}
-
+/* Tab Content */
 .tab-page {
   display: none;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
 }
 
 .tab-page.active {
   display: block;
 }
 
+/* Cards */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
 }
 
 .card {
-  background: #cce0ff;
+  background: #cde7ff;
   padding: 1rem;
-  width: 220px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  border: 2px solid #336699;
+  width: 280px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-  transform: rotate(-1deg);
   position: relative;
-  transition: transform 0.3s;
+  transform: rotate(-1deg);
+  border: 2px solid #79bfff;
+  margin-bottom: 1rem;
 }
 
-.card:hover {
-  transform: rotate(0deg) scale(1.05);
-}
-
-.polaroid {
-  background: #e6f0ff;
-  padding: 0.5rem;
-  border: 3px solid #336699;
-  border-radius: 8px;
-  transform: rotate(1deg);
-}
-
+/* Polaroid style images */
 .polaroid-img {
   width: 100%;
-  border-radius: 5px;
+  margin-top: 0.5rem;
+  border: 4px solid #ffffff;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+/* Photobooth style vertical images */
+.evana-photobooth img {
+  display: block;
+  margin: 0.5rem auto;
+  width: 100%;
+  border: 4px solid #ffffff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Matcha stack */
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Volunteer logos */
+.card-logos {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
   margin-top: 0.5rem;
 }
 
+.card-logos img {
+  width: 60px;
+  border-radius: 6px;
+  border: 2px solid #ffffff;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Stickers */
 .sticker {
   position: absolute;
   width: 60px;
-  opacity: 0.8;
-  z-index: 999;
+  opacity: 0.9;
 }
 
-.star { top: 20px; right: 20px; animation: wiggle 3s ease-in-out infinite; }
-.heart { bottom: 50px; left: 40px; animation: bounce 4s ease-in-out infinite; }
-.cloud { top: 120px; left: 30px; animation: float 6s ease-in-out infinite; }
+.cloud { top: 40px; left: 20px; animation: float 8s ease-in-out infinite; }
+.star { top: 150px; right: 30px; animation: wiggle 3s ease-in-out infinite; }
+.heart { bottom: 80px; left: 40px; animation: bounce 4s ease-in-out infinite; }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
+/* Sticker Animations */
+@keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);} }
+@keyframes wiggle { 0%,100%{transform:rotate(0deg);}50%{transform:rotate(15deg);} }
+@keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
 
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(15deg); }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+/* Notes inside cards */
+.note {
+  background: #a2d2ff;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }

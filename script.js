@@ -1,32 +1,21 @@
+// Sticker hover scale effect
 document.addEventListener("DOMContentLoaded", () => {
-  // Sticker hover
   const stickers = document.querySelectorAll('.sticker');
   stickers.forEach(sticker => {
-    sticker.addEventListener('mouseover', () => {
-      sticker.style.transform = 'scale(1.3)';
-    });
-    sticker.addEventListener('mouseout', () => {
-      sticker.style.transform = 'scale(1)';
-    });
+    sticker.addEventListener('mouseover', () => { sticker.style.transform = 'scale(1.3)'; });
+    sticker.addEventListener('mouseout', () => { sticker.style.transform = 'scale(1)'; });
   });
 
-  // Tabs logic
+  // Tab functionality
   const buttons = document.querySelectorAll('.tab-button');
   const pages = document.querySelectorAll('.tab-page');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const tab = btn.dataset.tab;
-      pages.forEach(p => {
-        p.classList.remove('active');
-        if(p.id === tab) p.classList.add('active');
-      });
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      pages.forEach(page => page.classList.remove('active'));
+      button.classList.add('active');
+      document.getElementById(button.dataset.tab).classList.add('active');
     });
   });
-
-  // Activate first tab by default
-  pages[0].classList.add('active');
 });
