@@ -1,15 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Tab functionality
-  const buttons = document.querySelectorAll(".tab-button");
-  const pages = document.querySelectorAll(".tab-page");
+const tabs = document.querySelectorAll('.tab-button');
+const pages = document.querySelectorAll('.tab-page');
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
-      pages.forEach(p => p.classList.remove("active"));
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
 
-      button.classList.add("active");
-      document.getElementById(button.dataset.tab).classList.add("active");
-    });
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById(tab.dataset.tab).classList.add('active');
   });
 });
