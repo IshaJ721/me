@@ -167,10 +167,22 @@ header {
 
 .floating {
   position: fixed;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   z-index: 1000;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.9;
   filter: hue-rotate(200deg); /* makes everything blue-ish */
+  transition: transform 0.1s ease;
+}
+
+.floating img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.tab-content img {
+  max-width: 100%;
+  max-height: 70%; /* Adjusts big images */
+  object-fit: contain;
 }
