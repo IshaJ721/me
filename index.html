@@ -1,93 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Scrapbook</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isha Jannu ✿ Bluebonnets Application</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="scrapbook">
-    <header>
-      <h1>✨ My Scrapbook ✨</h1>
-      <div class="tabs">
-        <button class="tab-btn active" onclick="openTab('about')">About Me</button>
-        <button class="tab-btn" onclick="openTab('service')">Service</button>
-        <button class="tab-btn" onclick="openTab('adventures')">Adventures</button>
-        <button class="tab-btn" onclick="openTab('matcha')">Matcha</button>
-        <button class="tab-btn" onclick="openTab('culture')">Culture & DEI</button>
-      </div>
-    </header>
-
-    <!-- About Me Tab -->
-    <section id="about" class="tab-content active">
-      <div class="page">
-        <div class="polaroid main-photo">
-          <img src="https://placehold.co/300x400?text=Add+your+photo+here+💕" alt="My Photo"/>
-        </div>
-        <div class="answer">
-          <h2>Why Bluebonnets?</h2>
-          <p>[your exact answer goes here]</p>
-        </div>
-        <div class="stickers">
-          <img src="https://i.ibb.co/QfvJrNZ/blue-heart.png" alt="heart"/>
-          <img src="https://i.ibb.co/7QxRmpD/blue-sparkle.png" alt="sparkle"/>
-        </div>
-      </div>
-    </section>
-
-    <!-- Service Tab -->
-    <section id="service" class="tab-content">
-      <div class="page">
-        <div class="answer">
-          <h2>Service</h2>
-          <p>[your exact service answer goes here]</p>
-        </div>
-        <div class="collage">
-          <div class="polaroid"><img src="https://placehold.co/200x250?text=Add+photo+💕"/></div>
-          <div class="polaroid"><img src="https://placehold.co/200x250?text=Add+photo+💕"/></div>
-          <div class="polaroid"><img src="https://placehold.co/200x250?text=Add+photo+💕"/></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Adventures Tab -->
-    <section id="adventures" class="tab-content">
-      <div class="page">
-        <h2>Adventures</h2>
-        <div class="collage">
-          <div class="polaroid"><img src="https://placehold.co/200x200?text=Add+photo+💕"/></div>
-          <div class="polaroid"><img src="https://placehold.co/200x200?text=Add+photo+💕"/></div>
-          <div class="polaroid"><img src="https://placehold.co/200x200?text=Add+photo+💕"/></div>
-          <div class="polaroid"><img src="https://placehold.co/200x200?text=Add+photo+💕"/></div>
-          <div class="polaroid"><img src="https://placehold.co/200x200?text=Add+photo+💕"/></div>
-          <div class="polaroid"><img src="https://placehold.co/200x200?text=Add+photo+💕"/></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Matcha Tab -->
-    <section id="matcha" class="tab-content">
-      <div class="page">
-        <h2>Matcha Love</h2>
-        <p>[your exact matcha answer goes here]</p>
-        <img class="sticker" src="https://i.ibb.co/2M6vr5V/matcha.png" alt="matcha"/>
-      </div>
-    </section>
-
-    <!-- Culture Tab -->
-    <section id="culture" class="tab-content">
-      <div class="page">
-        <h2>Culture & DEI</h2>
-        <p>[your exact DEI answer goes here]</p>
-        <div class="stickers">
-          <img src="https://i.ibb.co/wWd0nHj/globe.png" alt="globe"/>
-          <img src="https://i.ibb.co/q5vhRht/rainbow-heart.png" alt="rainbow heart"/>
-        </div>
-      </div>
-    </section>
+  <div class="floating-stickers">
+    <img src="heart.jpeg" class="sticker" alt="heart">
+    <img src="cloud.jpeg" class="sticker" alt="cloud">
+    <img src="star.jpeg" class="sticker" alt="star">
+    <img src="heart.jpeg" class="sticker" alt="heart">
+    <img src="cloud.jpeg" class="sticker" alt="cloud">
   </div>
+
+  <header>
+    <h1>Texas Bluebonnets ✿ Application</h1>
+    <h2>Isha Jannu (she/her)</h2>
+  </header>
+
+  <!-- Personal Info -->
+  <section class="note">
+    <h3>Applicant Info</h3>
+    <p><strong>UT Address:</strong> 2011 San Antonio Street APT 1817, Austin, TX 78705</p>
+    <p><strong>Phone:</strong> 214-585-6729</p>
+    <p><strong>Email:</strong> ishajannu@utexas.edu</p>
+    <p><strong>UT EID:</strong> isj283</p>
+    <p><strong>Year:</strong> Sophomore</p>
+    <p><strong>Major:</strong> Computer Science</p>
+    <p><strong>GPA:</strong> 3.23</p>
+  </section>
+
+  <!-- Why Bluebonnets -->
+  <section class="note taped">
+    <h3>Why do you want to join Texas Bluebonnets?</h3>
+    <p>
+      As a sophomore, I want to meet people outside my major that value the same things as me, and I think the pillars in CLASS fulfill that perfectly. This was the one place, at your info sessions, that I felt was genuine, because I'm an introvert and you all truly made me feel comfy being myself. Beyond my roomies, I would love to find a group of cuties who I can call family to do cutie activities with! &lt;3
+    </p>
+  </section>
+
+  <!-- Pillar -->
+  <section class="note taped">
+    <h3>Core Pillar ✿ Service</h3>
+    <p>
+      I'm really passionate about youth literacy after volunteer tutoring for years and I’m grateful to have grown up with an emphasis on the value of education. Realizing that illiteracy is a widespread epidemic made me want to advocate for it, by speaking at a TEDxYouth event and how technology can help us solve it together. Similarly, I also have spent many hours at the North Texas Food bank with my family and have continued that path of aiding food insecurity here at UT, through an org called ATX Food Hub. As the map improvement lead, we were able to provide a centralized hub to consolidate discounted/free food resources for students and Austinites– that’s why I’m especially excited if I continued that journey with Bluebonnets with Sunday Lunchbox. Additionally, I’m currently part of Project Advance Austin's working with the Dress for Success nonprofit for helping women achieve their professional dreams. I'm majoring in computer science simply because I want to develop tech to improve the everyday lives of people and that's honestly my life goal.
+    </p>
+  </section>
+
+  <!-- Short Answer -->
+  <section class="note taped">
+    <h3>What are you most passionate about in your life right now?</h3>
+    <p>
+      I’m passionate about living life to the fullest before I’m stuck in a corporate job (the 9-5 is overrated 🤨). Along those lines, I’m trying to find my personal brand and make time to find joy in the small things even with a busy schedule. For instance, I designed my room in my apartment (my first one 🥹) with a sage green theme, leaf fairy lights, and wooden/gold accents. I personally painted my decor on canvas and reconnecting with my creative side made me really happy– we get too caught up in life sometimes to make time for relaxing hobbies.
+    </p>
+  </section>
+
+  <section class="note taped">
+    <h3>If you could write a book on any topic, what would it be?</h3>
+    <p>
+      My lifelong dream has been to write a book– I’m a HUGE fiction reader, especially fantasy, dystopia, sci-fi, and romance. Later in life, I would love to move to some remote town in Europe (Italy is a strong contender?? 😁) and write my novel in some small cottage and maybe do my tech job remotely. I would write an awesome sci-fi romance, the next Hunger Games or Fourth Wing– I’m always open to good book recs– and I live for a good plot. I’d probably write a romance set in space with some astronauts– I especially love Ali Hazelwood’s style of bridging romance and women in STEM for nerds like me 😋 so I would probably implement something similar.
+    </p>
+  </section>
+
+  <!-- Quick Answers -->
+  <section class="note taped">
+    <h3>Quickfire ✿</h3>
+    <ul>
+      <li><strong>Favorite thing about yourself:</strong> Spontaneity…</li>
+      <li><strong>Travel anywhere:</strong> A remote beach 🌊</li>
+      <li><strong>Best advice:</strong> YOLO 💫</li>
+      <li><strong>Happy music:</strong> Throwbacks + Bollywood</li>
+      <li><strong>$1000?</strong> Food + thoughtful gifts</li>
+      <li><strong>Animal fight:</strong> A mouse 🐭</li>
+      <li><strong>Victorian item:</strong> A vibrator ⚡</li>
+      <li><strong>Death row meal:</strong> Pasta, biriyani, chocolate cake 🍝🍗🍰</li>
+      <li><strong>Most likely to…</strong> throw my phone in the dryer 😅</li>
+      <li><strong>Favorite emoji:</strong> 😚😋</li>
+    </ul>
+  </section>
+
+  <!-- Photo + Gallery -->
+  <section class="note polaroid">
+    <h3>Me!</h3>
+    <div class="photo-frame">
+      <img src="your-photo.jpeg" alt="Isha Jannu">
+    </div>
+  </section>
+
+  <section class="note gallery">
+    <h3>Photo Dump ✿</h3>
+    <div class="grid">
+      <!-- Add as many images as you like -->
+      <img src="pic1.jpeg" alt="">
+      <img src="pic2.jpeg" alt="">
+      <img src="pic3.jpeg" alt="">
+      <img src="pic4.jpeg" alt="">
+    </div>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>
