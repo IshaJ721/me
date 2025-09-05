@@ -1,25 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Tab switching
-  const buttons = document.querySelectorAll(".tab-button");
-  const pages = document.querySelectorAll(".tab-page");
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
-      pages.forEach(p => p.classList.remove("active"));
-
-      btn.classList.add("active");
-      document.getElementById(btn.dataset.tab).classList.add("active");
+  // Sticker hover
+  const stickers = document.querySelectorAll('.sticker');
+  stickers.forEach(sticker => {
+    sticker.addEventListener('mouseover', () => {
+      sticker.style.transform = 'scale(1.3)';
+    });
+    sticker.addEventListener('mouseout', () => {
+      sticker.style.transform = 'scale(1)';
     });
   });
 
-  // Sticker hover animation
-  const stickers = document.querySelectorAll('.sticker');
-  stickers.forEach(sticker => {
-    sticker.addEventListener('mouseover', () => sticker.style.transform = 'scale(1.2)');
-    sticker.addEventListener('mouseout', () => sticker.style.transform = 'scale(1)');
+  // Tabs logic
+  const buttons = document.querySelectorAll('.tab-button');
+  const pages = document.querySelectorAll('.tab-page');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const tab = btn.dataset.tab;
+      pages.forEach(p => {
+        p.classList.remove('active');
+        if(p.id === tab) p.classList.add('active');
+      });
+    });
   });
 
   // Activate first tab by default
-  buttons[0].click();
+  pages[0].classList.add('active');
 });

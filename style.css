@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Shadows Into Light', cursive, sans-serif;
-  background: #cce0ff url('paper-texture.png');
+  background: #cce0ff url('blue-sticky.png');
   background-size: cover;
   color: #003366;
   overflow-x: hidden;
@@ -9,76 +9,97 @@ body {
 
 .tabs {
   display: flex;
+  justify-content: center;
   gap: 1rem;
-  padding: 1rem 2rem;
-  background: #b3d1ff;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  margin: 2rem 0;
 }
 
 .tab-button {
-  background: #e6f0ff;
-  border: 2px solid #99c2ff;
+  background: #99ccff;
+  border: 2px solid #336699;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  transform: rotate(-1deg);
+  border-radius: 10px;
 }
 
 .tab-button.active {
-  background: #99c2ff;
+  background: #336699;
   color: #fff;
 }
 
 .tab-content {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
 }
 
 .tab-page {
   display: none;
-  transform: rotate(1deg);
 }
 
 .tab-page.active {
   display: block;
 }
 
-.card, .card-grid .card {
-  background: #e6f7ff;
-  padding: 1rem;
-  margin: 1rem 0;
-  border: 2px solid #99c2ff;
-  border-radius: 12px;
-  box-shadow: 4px 4px 8px rgba(0,0,0,0.15);
-  transform: rotate(-2deg);
-  position: relative;
-}
-
 .card-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
+}
+
+.card {
+  background: #cce0ff;
+  padding: 1rem;
+  width: 220px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  border: 2px solid #336699;
+  border-radius: 12px;
+  transform: rotate(-1deg);
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.polaroid {
+  background: #e6f0ff;
+  padding: 0.5rem;
+  border: 3px solid #336699;
+  border-radius: 8px;
+  transform: rotate(1deg);
+}
+
+.polaroid-img {
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 0.5rem;
 }
 
 .sticker {
   position: absolute;
   width: 60px;
   opacity: 0.8;
-  z-index: 5;
+  z-index: 999;
 }
 
-.cloud { top: 50px; left: 20px; animation: float 8s ease-in-out infinite; }
-.star { top: 200px; right: 30px; animation: wiggle 3s ease-in-out infinite; }
-.heart { bottom: 100px; left: 40px; animation: bounce 4s ease-in-out infinite; }
+.star { top: 20px; right: 20px; animation: wiggle 3s ease-in-out infinite; }
+.heart { bottom: 50px; left: 40px; animation: bounce 4s ease-in-out infinite; }
+.cloud { top: 120px; left: 30px; animation: float 6s ease-in-out infinite; }
 
-@keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);} }
-@keyframes wiggle { 0%,100%{transform:rotate(0deg);}50%{transform:rotate(15deg);} }
-@keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
 
-a { color: #003366; font-weight: bold; text-decoration: none; }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
